@@ -10,4 +10,4 @@ const style = Object.assign({
   color: Colors.white,
 }, Fonts.actions)
 
-export default ({ children }) => <button style={style}>{children}</button>;
+export default ({ onClick, children }) => <button onClick={onClick} style={style}>{children}</button>;

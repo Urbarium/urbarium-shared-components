@@ -1,0 +1,5 @@
+{
+  "builds": [
+    { "src": ".out/*", "use": "@now/static" }
+  ]
+}
