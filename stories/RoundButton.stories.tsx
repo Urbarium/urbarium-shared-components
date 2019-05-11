@@ -5,7 +5,7 @@ import RoundButton from '../src/components/RoundButton';
 import { action, configureActions } from '@storybook/addon-actions';
 
 storiesOf('RoundButton', module)
-  .add('CREAR BONO', () => ([
+  .add('Crear Bono', () => ([
     <RoundButton onClick={action('button-click')}>CREAR BONO</RoundButton>,
     <RoundButton onClick={action('button-click')}>COLSULTAR BONOS</RoundButton>,
     <RoundButton onClick={action('button-click')}>OBSERVAR MÉTRICAS</RoundButton>
