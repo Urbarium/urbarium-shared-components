@@ -1,13 +1,15 @@
 import React from 'react';
 import Colors from '../colors';
-import Fonts from '../fonts'
+import { defaultFont } from '../fonts';
+import styled from 'styled-components';
 
-const style = Object.assign({
-  background: Colors.action.primary,
-  width: '292px',
-  height: '42px',
-  borderRadius: '20px',
-  color: Colors.white,
-}, Fonts.actions)
+const MyButton = styled.button`
+  ${defaultFont}
+  background: ${Colors.action.primary};
+  width: 292px;
+  height: 42px;
+  border-radius: 20px;
+  color: ${Colors.white};
+`;
 
-export default ({ onClick, children }) => <button onClick={onClick} style={style}>{children}</button>;
+export default ({ onClick, children }) => <MyButton onClick={onClick}>{children}</MyButton>;

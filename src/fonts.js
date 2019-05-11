@@ -1,14 +1,8 @@
-import Colors from './colors'
-
-var defaultFont = {
-  fontFamily: 'Proxima Nova, Roboto, Sans-Serif',
-  fontSize: '14px',
-  fontWeight: 500,
-  letterSpacing: '1px',
-  lineHeight: '17px',
-  fontStyle: 'normal',
-}
-
-export default {
-  actions: defaultFont
-}
+export const defaultFont = `
+  font-family: Proxima Nova, Roboto, Sans-Serif;
+  font-size: 14px;
+  font-weigth: 500;
+  letter-spacing: 1px;
+  line-height: 17px;
+  font-style: normal;
+`
