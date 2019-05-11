@@ -12,3 +12,7 @@ storiesOf('LabeledInput', module)
     .add('with normal label', () => (
         <LabeledInputTest label="Teléfono" placeholder="0000 0000"/>
     ))
+
+    .add('no label', () => (
+        <LabeledInputTest placeholder="some placeholder"/>
+    ))
