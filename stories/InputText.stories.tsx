@@ -1,16 +1,16 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import UInput from '../src/components/UInput';
+import InputText from '../src/components/InputText';
 
-storiesOf('UInput', module)
+storiesOf('InputText', module)
   .add('with placeholder', () => (
-    <UInput placeholder="Primer Apellido"/>
+    <InputText placeholder="Primer Apellido"/>
   ))
   .add('with values', () => (
-    <UInput value="Salas"/>
+    <InputText value="Salas"/>
   ))
   .add('empty', () => (
-    <UInput/>
+    <InputText/>
   ))
 
   

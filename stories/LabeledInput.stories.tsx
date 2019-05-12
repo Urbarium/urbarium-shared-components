@@ -1,18 +1,30 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import LabeledInputTest from '../src/components/LabeledInput';
+import LabeledInput from '../src/components/LabeledInput';
 import Label from '../src/components/Label';
 
 storiesOf('LabeledInput', module)
-    .add('with sub label', ()=> ([
-        <LabeledInputTest sub label="CÉDULA" placeholder="0 0000 0000"/>,
-        <LabeledInputTest sub label="NOMBRE" placeholder="Nombre"/>,
+    .add('text input - sub label', ()=> ([
+        <LabeledInput type="text" sub label="NOMBRE" placeholder="Nombre"/>,
+        <LabeledInput type="text" sub label="APELLIDO" placeholder="Apellido"/>,
     ]))
 
-    .add('with normal label', () => (
-        <LabeledInputTest label="Teléfono" placeholder="0000 0000"/>
+    .add('text input - normal label', () => (
+        <LabeledInput type="text" label="Teléfono" placeholder="0000 0000"/>
     ))
 
-    .add('no label', () => (
-        <LabeledInputTest placeholder="some placeholder"/>
+    .add('text input - no label', () => (
+        <LabeledInput type="text" placeholder="some placeholder"/>
+    ))
+
+    .add('drop input - sub label', ()=> (
+        <LabeledInput type="drop" sub label="Mano" placeholder="mano" children={["derecha", "izquierda"]}/>
+    ))
+
+    .add('drop input - normal label', ()=> (
+        <LabeledInput type="drop" label="Mano" children={["derecha", "izquierda"]}/>
+    ))
+
+    .add('drop input - no label', ()=> (
+        <LabeledInput type="drop" children={["derecha", "izquierda"]}/>
     ))
