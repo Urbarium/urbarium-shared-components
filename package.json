@@ -17,7 +17,7 @@
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
     "storybook": "start-storybook",
-    "build-storybook": "build-storybook -c .storybook -o .out"
+    "now-build": "build-storybook -c .storybook -o dist"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
