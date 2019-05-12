@@ -8,5 +8,7 @@ export default {
     progress: '#7ED321',
     done: '#0077FF'
   },
-  white: '#FFFFFF'
+  white: '#FFFFFF',
+  black: 	'#23262B',
+
 }
