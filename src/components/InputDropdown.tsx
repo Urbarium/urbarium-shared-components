@@ -19,7 +19,7 @@ const PlaceholderOption = styled.option`
     color: gray;
 `
 
-export default ({placeholder, children}) => 
+export default ({placeholder="", children}) => 
     <Input>
         {[<option disabled selected hidden value="">{placeholder}</option>,
         ...children]}

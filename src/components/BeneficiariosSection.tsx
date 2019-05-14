@@ -65,7 +65,7 @@ export default () => (
                 <Input type="text" sub label="NOMBRE" placeholder="Nombre"/>
             </Div>
             <Div area="apellido1" justify="center">
-                <Input area="apellido1" type="text" sub label="PRIMER APELLIDO" placeholder="Primer apellido"/>
+                <Input type="text" sub label="PRIMER APELLIDO" placeholder="Primer apellido"/>
             </Div>
             <Div area="apellido2" justify="end">
                 <Input type="text" sub label="SEGUNDO APELLIDO" placeholder="Segundo apellido"/>

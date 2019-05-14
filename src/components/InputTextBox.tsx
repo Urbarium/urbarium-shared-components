@@ -17,6 +17,6 @@ const Input = styled.textarea`
   resize: none;
 `
 
-export default ({placeholder, value, fill}) => <Input placeholder={placeholder} value={value} fill={fill}></Input>;
+export default ({placeholder="", value=null, fill=false}) => <Input placeholder={placeholder} value={value} fill={fill}></Input>;
 
 

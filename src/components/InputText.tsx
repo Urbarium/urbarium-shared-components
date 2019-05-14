@@ -14,4 +14,4 @@ const Input = styled.input`
   padding-left: 15px;
 `;
 
-export default ({placeholder, value}) => <Input type="text" placeholder={placeholder} value={value}></Input>;
+export default ({placeholder="", value=null}) => <Input type="text" placeholder={placeholder} value={value}></Input>;

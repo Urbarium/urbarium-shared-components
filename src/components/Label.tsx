@@ -12,4 +12,4 @@ const Label = styled.label`
     margin: 0px; 
 `;
 
-export default ({children, sub, area}) => <Label sub={sub} area={area}>{children}</Label>;
+export default ({children, sub=false}) => <Label sub={sub}>{children}</Label>;

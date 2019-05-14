@@ -31,7 +31,7 @@ const getInput = (type, children, placeholder, fill) => {
 }
 
 
-export default ({type, children, placeholder, label, sub, fill}) => (
+export default ({type, children=[], placeholder="", label="", sub=false, fill=false}) => (
     <LabeledInput>        
             {label ? <Item><Label sub={sub}>{label}</Label></Item> : ""}        
         <Item>

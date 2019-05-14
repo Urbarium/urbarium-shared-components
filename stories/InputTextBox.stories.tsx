@@ -12,7 +12,7 @@ storiesOf('InputTextBox', module)
         <InputTextBox placeholder="Direccion exacta"/>
     ))
     .add('default size - With values', () =>(
-        <InputTextBox>500m Norte del Parque Central</InputTextBox>
+        <InputTextBox value="Texto de prueba"></InputTextBox>
     ))
     .add('default size - Empty', () =>(
         <InputTextBox/>
