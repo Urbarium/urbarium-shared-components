@@ -3,6 +3,7 @@ export default {
   secondary: '#EBEDF8',
   background: '#FFFFFF',
   passive: '#C0C5D2',
+  option: '#8A96A0',
   action: {
     primary:'#99BF24',
     progress: '#7ED321',

@@ -1,6 +1,6 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-import InputTextBox from '../src/components/InputTextBox';
+import InputTextBox from '../src/components/InputTextbox';
 
 
 storiesOf('InputTextBox', module)

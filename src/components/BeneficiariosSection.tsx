@@ -91,14 +91,12 @@ export default () => (
         </Direction>
 
         <Telefonos>
-        <Div area="telefono">
-            <Input type="text" label="Telefono" placeholder="0000 0000"/>
-        </Div>
-        <Div area="celular" justify="center">
-            <Input type="text" label="Celular" placeholder="0000 0000"/>
-        </Div>
-            
-            
+            <Div area="telefono">
+                <Input type="text" label="Telefono" placeholder="0000 0000"/>
+            </Div>
+            <Div area="celular" justify="center">
+                <Input type="text" label="Celular" placeholder="0000 0000"/>
+            </Div>
         </Telefonos>
     </Wrapper>
 )

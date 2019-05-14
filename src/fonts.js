@@ -4,7 +4,6 @@ export default {
   font-family: Lato, Roboto, Sans-Serif;
   fonr-size: 27px;
   font-weight: bold;
-  letter-spacing: 0.01px;
 `,
 
   defaultInput: `
@@ -20,12 +19,16 @@ export default {
   font-family: Lato, Roboto, Sans-Serif;
   font-size: 15px;
   font-weight: bold;
-  letter-spacing: -0.01px;
   `,
 
   subLabel: `
   font-family: Lato, Roboto, Sans-Serif;
   font-size: 11px;
   letter-spacing: 0.09px;
+  `,
+
+  optionLabel: `
+  font-family: Lato, Roboto, Sans-Serif;
+  font-size: 15px;
   `,
 }

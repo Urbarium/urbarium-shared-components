@@ -1,21 +1,18 @@
 import React from 'react';
-import Label from '../components/Label';
-import InputText from '../components/InputText';
-import InputDrop from '../components/InputDropdown';
-import InputBox from '../components/InputTextBox';
+import Label from './Label';
+import InputText from './InputText';
+import InputDrop from './InputDropdown';
+import InputBox from './InputTextbox';
 import styled from 'styled-components';
 
 
 
 const LabeledInput = styled.div`
-    margin: 0px;
-    padding: 0px;
     height: 100%;
 `; 
 const Item = styled.div`
-    margin: 5px 5px 5px 0px;
-    padding: 0px;
     height: 100%;
+    margin: 5px 5px 5px 0px;
 `;
 
 
