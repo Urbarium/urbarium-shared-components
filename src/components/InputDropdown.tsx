@@ -5,11 +5,12 @@ import styled from 'styled-components';
 
 const Input = styled.select`
     ${fonts.defaultInput};
-    background: ${colors.white};
+    background: ${colors.background};
     box-sizing: border-box;
     width: 180px;
     height: 36px;
     border-radius: 20px;
+    border: 1px ${colors.passive} solid;
     padding-left: 15px;
 `;
 

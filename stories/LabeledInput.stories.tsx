@@ -28,3 +28,15 @@ storiesOf('LabeledInput', module)
     .add('drop input - no label', ()=> (
         <LabeledInput type="drop" children={["derecha", "izquierda"]}/>
     ))
+
+    .add('box input - normal label', ()=> (
+        <LabeledInput type="box" placeholder="this is placeholder text" label="Label"/>
+    ))
+
+    .add('box input - sub label', ()=> (
+        <LabeledInput type="box" placeholder="introduzca su texto aqui" label="Label" sub/>
+    ))
+
+    .add('box input - no label', ()=> (
+        <LabeledInput type="box" />
+    ))

@@ -13,6 +13,7 @@ const Input = styled.textarea`
   border: 1px ${colors.passive} solid;
   padding-left: 15px;
   padding-top: 10px;
+  margin: 0px;
   resize: none;
 `
 
