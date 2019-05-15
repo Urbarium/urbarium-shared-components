@@ -40,3 +40,15 @@ storiesOf('LabeledInput', module)
     .add('box input - no label', ()=> (
         <LabeledInput type="box" />
     ))
+
+    .add('checkbox input - no label', ()=> (
+        <LabeledInput type="checkbox" options={['Opcion 1', 'Opcion 2', 'Opcion 3']} />
+    ))
+
+    .add('checkbox input - sub label', ()=> (
+        <LabeledInput type="checkbox" label='Seleccion multiple' sub  options={['Opcion 1', 'Opcion 2', 'Opcion 3']}/>
+    ))
+
+    .add('radio input - normal label', ()=> (
+        <LabeledInput type="radio" label='Seleccion unica'  options={['Opcion 1', 'Opcion 2', 'Opcion 3']}/>
+    ))

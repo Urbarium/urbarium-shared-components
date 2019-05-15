@@ -13,12 +13,14 @@ const Label = styled.label`
 `
 
 const SmallWrapper = styled.div`
-    margin: 15px;
+    margin: 10px;
+    margin-left: 0px;
 `
 const BigWrapper = styled.div`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    justify-content: start;    
+    grid-template-columns: repeat(auto-fill, minmax(150px, auto));
+    
 `
 const getTaggedOptions = (options, name, right, radio) => (
     options.map((option, index) => (
