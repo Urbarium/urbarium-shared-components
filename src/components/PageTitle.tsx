@@ -4,9 +4,11 @@ import fonts from '../fonts';
 import styled from 'styled-components';
 
 
-const Title = styled.h1`
+const H1 = styled.h1`
     ${fonts.defaultTitle}
     color: $(colors.black)
 `;
 
-export default ({children}) => <Title>{children}</Title>;
+const Title = ({children}) => <H1>{children}</H1>;
+
+export default Title;

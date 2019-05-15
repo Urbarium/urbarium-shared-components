@@ -1,25 +1,25 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-import InputSelection from '../src/components/InputSelection';
+import Input from '../src/components/InputSelection';
 
 storiesOf('InputSelection', module)
     .add('Checkbox - default', () => (
-        <InputSelection/>
+        <Input/>
     ))
     .add('Checkbox - box on right', () => (
-        <InputSelection right/>
+        <Input right/>
     ))
     .add('Checkbox - with options', () => (
-        <InputSelection options={['Pizza', 'Breadsticks', 'Refresco 2L', 'Extra queso']}/>
+        <Input options={['Pizza', 'Breadsticks', 'Refresco 2L', 'Extra queso']}/>
     ))
     .add('Radio - default', () => (
-        <InputSelection radio/>
+        <Input radio/>
     ))
     .add('Radio - box on right', () => (
-        <InputSelection right radio/>
+        <Input right radio/>
     ))
     .add('Radio - with options', () => (
-        <InputSelection radio options={['Jamon', 'Peperoni', 'Suprema', 'Margarita']}/>
+        <Input radio options={['Jamon', 'Peperoni', 'Suprema', 'Margarita']}/>
     ))
 
     

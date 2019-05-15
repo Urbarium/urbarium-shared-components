@@ -3,7 +3,7 @@ export default {
   defaultTitle: `
   font-family: Lato, Roboto, Sans-Serif;
   fonr-size: 27px;
-  font-weight: bold
+  font-weight: bold;
 `,
 
   defaultInput: `
@@ -12,23 +12,23 @@ export default {
   font-weight: 500;
   letter-spacing: 1px;
   line-height: 17px;
-  font-style: normal
+  font-style: normal;
   `,
 
   defaultLabel: `
   font-family: Lato, Roboto, Sans-Serif;
   font-size: 15px;
-  font-weight: bold
+  font-weight: bold;
   `,
 
   subLabel: `
   font-family: Lato, Roboto, Sans-Serif;
   font-size: 11px;
-  letter-spacing: 0.09px
+  letter-spacing: 0.09px;
   `,
 
   optionLabel: `
   font-family: Lato, Roboto, Sans-Serif;
-  font-size: 15px
+  font-size: 15px;
   `
 }

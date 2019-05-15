@@ -5,7 +5,7 @@ import Label from './Label';
 import PageTitle from './PageTitle';
 import RoundButton from './RoundButton';
 
-const Flex = styled.div`
+const FlexDiv = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -14,7 +14,7 @@ const Flex = styled.div`
 const TallDiv = styled.div`
     height: 100px;
 `
-const Grid = styled.div`
+const GridDiv = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 `
@@ -40,27 +40,27 @@ export default () => (
         <PageTitle>Jose Andres Montero - 207050086</PageTitle>
             <Label>Beneficiario 1</Label>
             <Input type="text" sub label="CÉDULA" placeholder="0 0000 0000"/>
-            <Flex>
+            <FlexDiv>
                 <Input type="text" sub label="NOMBRE" placeholder="Nombre"/>
                 <Input type="text" sub label="PRIMER APELLIDO" placeholder="Primer apellido"/>
                 <Input type="text" sub label="SEGUNDO APELLIDO" placeholder="Segundo apellido"/>
-            </Flex>
+            </FlexDiv>
 
             <Label>Dirección</Label>
-            <Flex>
+            <FlexDiv>
                 <Input type="drop" placeholder="Provincia" options={provincias}/>
                 <Input type="drop" placeholder="Cantón" options={cantones}/>
                 <Input type="drop" placeholder="Distrito" options={distritos}/>
-            </Flex>
+            </FlexDiv>
             <TallDiv>
                 <Input type="box" placeholder="Dirección exacta" fill></Input>
             </TallDiv>
-            <Grid>
+            <GridDiv>
                 <Input type="text" label="Telefono" placeholder="0000 0000"/>
                 <div style={{justifySelf:'center'}}>
                     <Input type="text" label="Celular" placeholder="0000 0000"/>
                 </div>
-            </Grid>
+            </GridDiv>
             <div style={{position:'relative',}}>
                 <div style={{position:'absolute',right:'0px'}}>
                     <RoundButton>GUARDAR Y CONTINUAR</RoundButton>

@@ -9,15 +9,10 @@ const Input = styled.select`
     box-sizing: border-box;
     width: 180px;
     height: 36px;
-    border-radius: 20px;
+    border-radius: 18px;
     border: 1px ${colors.passive} solid;
     padding-left: 15px;
 `;
-
-
-const PlaceholderOption = styled.option`
-    color: gray;
-`
 
 const getTaggedOptions = (options) => options.map(option => <option>{option}</option>)
 

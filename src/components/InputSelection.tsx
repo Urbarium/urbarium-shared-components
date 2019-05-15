@@ -12,11 +12,11 @@ const Label = styled.label`
     color: ${colors.option}    
 `
 
-const SmallWrapper = styled.div`
+const SmallDiv = styled.div`
     margin: 10px;
     margin-left: 0px;
 `
-const BigWrapper = styled.div`
+const BigDiv = styled.div`
     display: grid;
     justify-content: start;    
     grid-template-columns: repeat(auto-fill, minmax(150px, auto));
@@ -24,13 +24,16 @@ const BigWrapper = styled.div`
 `
 const getTaggedOptions = (options, name, right, radio) => (
     options.map((option, index) => (
-        <SmallWrapper>        
+        <SmallDiv>        
             {right ? <Label for={option}>{option}</Label> : ""}
             <Input name={name}  id={option} value={option} type={radio ? 'radio' : 'checkbox'}/>
             {right ? "" : <Label for={option}>{option}</Label>}
-        </SmallWrapper>
+        </SmallDiv>
     ))
 )
 
-export default ({options=['option1'], name='group1', right=false, radio=false}) => 
-    <BigWrapper>{getTaggedOptions(options, name, right, radio)}</BigWrapper>
+const InputSelection = ({options=['option1'], name='group1', right=false, radio=false}) => 
+<BigDiv>{getTaggedOptions(options, name, right, radio)}</BigDiv>
+
+
+export default InputSelection;
