@@ -5,7 +5,7 @@ import Input from './LabeledInput';
 
 export default () =>
 <div>
-    <AccItem index='2' title='En conformacion' columns='3fr 1fr'>
+    <AccItem index={2} title='En conformacion' columns='3fr 1fr'>
         <Input type='checkbox' label='Expediente' options={[
             'Bienes inmuebles',
             'Informe registral',
@@ -21,10 +21,24 @@ export default () =>
         ]}/>
         <Input type='checkbox' label='Avalúo' options={['Recibo de Pago']}/>
     </AccItem>
-    <AccItem index='3' title='Enviado a entidad' columns='1fr 2fr'>
+    <AccItem index={3} title='Enviado a entidad' columns='1fr 2fr'>
         <Input type='checkbox' options={[
             'Solicitud de cambio por aváluo',
             'Solicitud de cambios en trámites'
         ]}/>
+    </AccItem>
+    <AccItem index={8} title='Postulada a Bahnvi' columns='1fr 2fr'>
+        <Input type='checkbox' options={[
+            'Inconsistencias',
+            'Declaratoria emitida'
+        ]}/>
+        <Input type='textarea' placeholder='Notas' fill/>
+    </AccItem>
+    <AccItem index={9} title='Preparación de documentos para APC' columns='1fr 2fr'>
+            <Input type='checkbox' options={[
+                'Planos en Sharepoint',
+                'Documentos en Sharepoint',
+            ]}/>
+            <Input type='dropdown' placeholder='Adjuntar documento' options={['Esto deberia ser un boton de archivo, no de dropdown']}/>
     </AccItem>
 </div>

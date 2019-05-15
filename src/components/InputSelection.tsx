@@ -4,8 +4,8 @@ import colors from '../colors';
 import fonts from '../fonts';
 
 const Input = styled.input`
-    // Nothing yet
-    // have to change the default checkbox image
+    /* Nothing yet
+     have to change the default checkbox image */
 `
 const Label = styled.label`
     ${fonts.optionLabel}
@@ -20,6 +20,7 @@ const BigDiv = styled.div`
     display: grid;
     justify-content: start;    
     grid-template-columns: repeat(auto-fill, minmax(150px, auto));
+    
     
 `
 const getTaggedOptions = (options, name, right, radio) => (

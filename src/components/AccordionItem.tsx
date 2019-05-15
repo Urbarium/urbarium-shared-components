@@ -8,6 +8,7 @@ const Frame = styled.div`
     border: 1px ${colors.passive} solid;
     border-radius: 18px;
     padding: 15px 25px;
+    margin: 5px 0px;
 `;
 
 const FlexDiv = styled.div`
@@ -23,13 +24,13 @@ const IndexP = styled.p`
 `;
 
 const GridBody = styled.div`
-    padding: 15px;;
-    padding-bottom: 0px
+    padding: 15px;
+    padding-bottom: 0px;
     display: grid;
     grid-template-columns: ${props => props.columns};
 `;
 
-const AccordionItem = ({children, index='0', title="", columns='auto'}) => 
+const AccordionItem = ({children, index=0, title="", columns='auto'}) => 
 <Frame>
     <FlexDiv>
         <FlexDiv>

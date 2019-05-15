@@ -15,9 +15,9 @@ const Div = styled.div`
 
 const getInput = (type, options, placeholder, fill, right) => {
     switch (type) {
-        case "text": return <InputTextBox placeholder={placeholder}/>
-        case "box": return <InputTextArea placeholder={placeholder} fill={fill}/>
-        case "drop": return <InputDropdown options={options} placeholder={placeholder}/>
+        case "textbox": return <InputTextBox placeholder={placeholder}/>
+        case "textarea": return <InputTextArea placeholder={placeholder} fill={fill}/>
+        case "dropdown": return <InputDropdown options={options} placeholder={placeholder}/>
         case "checkbox" : return <InputSelection options={options} right={right}/>
         case "radio" : return <InputSelection options={options} right={right} radio/>        
     }

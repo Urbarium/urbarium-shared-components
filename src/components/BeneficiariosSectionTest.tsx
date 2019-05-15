@@ -39,26 +39,26 @@ export default () => (
     <Wrapper>
         <PageTitle>Jose Andres Montero - 207050086</PageTitle>
             <Label>Beneficiario 1</Label>
-            <Input type="text" sub label="CÉDULA" placeholder="0 0000 0000"/>
+            <Input type="textbox" sub label="CÉDULA" placeholder="0 0000 0000"/>
             <FlexDiv>
-                <Input type="text" sub label="NOMBRE" placeholder="Nombre"/>
-                <Input type="text" sub label="PRIMER APELLIDO" placeholder="Primer apellido"/>
-                <Input type="text" sub label="SEGUNDO APELLIDO" placeholder="Segundo apellido"/>
+                <Input type="textbox" sub label="NOMBRE" placeholder="Nombre"/>
+                <Input type="textbox" sub label="PRIMER APELLIDO" placeholder="Primer apellido"/>
+                <Input type="textbox" sub label="SEGUNDO APELLIDO" placeholder="Segundo apellido"/>
             </FlexDiv>
 
             <Label>Dirección</Label>
             <FlexDiv>
-                <Input type="drop" placeholder="Provincia" options={provincias}/>
-                <Input type="drop" placeholder="Cantón" options={cantones}/>
-                <Input type="drop" placeholder="Distrito" options={distritos}/>
+                <Input type="dropdown" placeholder="Provincia" options={provincias}/>
+                <Input type="dropdown" placeholder="Cantón" options={cantones}/>
+                <Input type="dropdown" placeholder="Distrito" options={distritos}/>
             </FlexDiv>
             <TallDiv>
-                <Input type="box" placeholder="Dirección exacta" fill></Input>
+                <Input type="textarea" placeholder="Dirección exacta" fill></Input>
             </TallDiv>
             <GridDiv>
-                <Input type="text" label="Telefono" placeholder="0000 0000"/>
+                <Input type="textbox" label="Telefono" placeholder="0000 0000"/>
                 <div style={{justifySelf:'center'}}>
-                    <Input type="text" label="Celular" placeholder="0000 0000"/>
+                    <Input type="textbox" label="Celular" placeholder="0000 0000"/>
                 </div>
             </GridDiv>
             <div style={{position:'relative',}}>
