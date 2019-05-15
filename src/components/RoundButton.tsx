@@ -14,4 +14,4 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-export default ({onClick, children}) => <Button onClick={onClick} >{children}</Button>;
+export default ({onClick=null, children}) => <Button onClick={onClick} >{children}</Button>;
