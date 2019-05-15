@@ -18,15 +18,15 @@ storiesOf('LabeledInput', module)
     ))
 
     .add('drop input - sub label', ()=> (
-        <LabeledInput type="drop" sub label="Mano" placeholder="mano" children={["derecha", "izquierda"]}/>
+        <LabeledInput type="drop" sub label="Mano" placeholder="mano" options={["derecha", "izquierda"]}/>
     ))
 
     .add('drop input - normal label', ()=> (
-        <LabeledInput type="drop" label="Mano" children={["derecha", "izquierda"]}/>
+        <LabeledInput type="drop" label="Mano" options={["derecha", "izquierda"]}/>
     ))
 
     .add('drop input - no label', ()=> (
-        <LabeledInput type="drop" children={["derecha", "izquierda"]}/>
+        <LabeledInput type="drop" options={["derecha", "izquierda"]}/>
     ))
 
     .add('box input - normal label', ()=> (

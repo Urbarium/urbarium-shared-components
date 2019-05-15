@@ -3,22 +3,11 @@ import { storiesOf } from '@storybook/react'
 import InputDrop from  '../src/components/InputDropdown'
 
 
-storiesOf('InputDropdown')
+storiesOf('InputDropdown', module)
     .add("no placeholder", () => (
-        <InputDrop> 
-            <option>Izquierda</option>
-            <option>Derecha</option>
-        </InputDrop>
+        <InputDrop options={['Izquierda', 'Derecha']}/>
     ))
 
     .add("with placeholder", () => (
-        <InputDrop placeholder="Provincia"> 
-            <option>San Jose</option>
-            <option>Alajuela</option>
-            <option>Heredia</option>
-            <option>Cartago</option>
-            <option>Limon</option>
-            <option>Puntarenas</option>
-            <option>Guancaste</option>
-        </InputDrop>
+        <InputDrop placeholder='Provincia' options={['San Jose', 'Alajuela', 'Heredia', 'Cartago', 'Limon', 'Puntarenas', 'Guancaste']}/>
     ))

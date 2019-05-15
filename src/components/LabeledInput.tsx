@@ -3,36 +3,31 @@ import Label from './Label';
 import InputText from './InputText';
 import InputDrop from './InputDropdown';
 import InputBox from './InputTextbox';
+import InputSelection from './InputSelection';
 import styled from 'styled-components';
 
 
 
 const LabeledInput = styled.div`
     height: 100%;
+    margin-bottom: 10px;
 `; 
-const Item = styled.div`
-    height: 100%;
-    margin: 5px 5px 5px 0px;
-`;
 
 
-const getInput = (type, children, placeholder, fill) => {
+
+const getInput = (type, options, placeholder, fill, right) => {
     switch (type) {
         case "text": return <InputText placeholder={placeholder}/>
-        case "drop": return (
-            <InputDrop placeholder={placeholder}>
-                {children.map((child) => <option value={child}>{child}</option>)}
-            </InputDrop>)
-        case "box": return <InputBox placeholder={placeholder} fill={fill}></InputBox>
+        case "box": return <InputBox placeholder={placeholder} fill={fill}/>
+        case "drop": return <InputDrop options={options} placeholder={placeholder}/>        
+        case "checkbox:" : return <InputSelection options={options} right={right}/>
+        case "radio:" : return <InputSelection options={options} right={right} radio/>
     }
 }
 
-
-export default ({type, children=[], placeholder="", label="", sub=false, fill=false}) => (
+export default ({type, options=[], placeholder="", label="", sub=false, fill=false, right=false}) => (
     <LabeledInput>        
-            {label ? <Item><Label sub={sub}>{label}</Label></Item> : ""}        
-        <Item>
-            {getInput(type, children, placeholder, fill)}
-        </Item>
+        {label ? <Label sub={sub}>{label}</Label>: ""}        
+        {getInput(type, options, placeholder, fill, right)}
     </LabeledInput>
 );

@@ -8,7 +8,8 @@ const Button = styled.button`
   background: ${colors.action.primary};
   width: 292px;
   height: 42px;
-  border-radius: 20px;
+  border-radius: 21px;
+  border: 0px;
   color: ${colors.white};
   cursor: pointer;
 `;

@@ -10,5 +10,5 @@ export default {
     done: '#0077FF'
   },
   black: 	'#23262B',
-
+  white: '#FFF'
 }

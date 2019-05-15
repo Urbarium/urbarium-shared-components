@@ -19,8 +19,10 @@ const PlaceholderOption = styled.option`
     color: gray;
 `
 
-export default ({placeholder="", children}) => 
+const getTaggedOptions = (options) => options.map(option => <option>{option}</option>)
+
+export default ({placeholder="", options=['option1']}) => 
     <Input>
         {[<option disabled selected hidden value="">{placeholder}</option>,
-        ...children]}
+        ...getTaggedOptions(options)]}
     </Input>;

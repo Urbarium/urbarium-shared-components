@@ -12,18 +12,23 @@ const Label = styled.label`
     color: ${colors.option}    
 `
 
-const Wrapper = styled.div`
-    // Nothing yet
+const SmallWrapper = styled.div`
+    margin: 15px;
+`
+const BigWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 `
 const getTaggedOptions = (options, name, right, radio) => (
-    <Wrapper>
-        {options.map((option, index) => ([            
-            right ? <Label for={option}>{option}</Label> : "",
-            <Input name={name}  id={option} value={option} type={radio ? 'radio' : 'checkbox'}/>,
-            right ? "" : <Label for={option}>{option}</Label>
-        ]))}
-    </Wrapper>
+    options.map((option, index) => (
+        <SmallWrapper>        
+            {right ? <Label for={option}>{option}</Label> : ""}
+            <Input name={name}  id={option} value={option} type={radio ? 'radio' : 'checkbox'}/>
+            {right ? "" : <Label for={option}>{option}</Label>}
+        </SmallWrapper>
+    ))
 )
 
 export default ({options=['option1'], name='group1', right=false, radio=false}) => 
-    <Wrapper>{getTaggedOptions(options, name, right, radio)}</Wrapper>
+    <BigWrapper>{getTaggedOptions(options, name, right, radio)}</BigWrapper>
