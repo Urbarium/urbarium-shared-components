@@ -17,7 +17,7 @@ const TextArea = styled.textarea`
   resize: none;
 `
 
-const InputTextArea = ({placeholder="", value=null, fill=false}) => 
+const InputTextArea = ({placeholder="", value=undefined, fill=false}) => 
   <TextArea placeholder={placeholder} value={value} fill={fill}></TextArea>;
 
 export default InputTextArea;

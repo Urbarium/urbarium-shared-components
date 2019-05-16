@@ -3,6 +3,7 @@ import styled from 'styled-components/macro';
 import colors from '../colors'
 import fonts from '../fonts'
 import Label from './Label';
+import Arrow from './ButtonArrow';
 
 const Frame = styled.div`
     border: 1px ${colors.passive} solid;
@@ -40,6 +41,7 @@ const AccordionItem = ({children, index=0, title="", columns='auto'}) =>
         <Label sub>12/10/2019</Label>
         <Label sub>15/10/2019</Label>
         <Label sub>Juan Jose Alfaro</Label>
+        <Arrow/>
     </FlexDiv>
     <GridBody columns={columns}>
         {children}

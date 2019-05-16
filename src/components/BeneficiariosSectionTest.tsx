@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Input from './LabeledInput';
 import Label from './Label';
 import PageTitle from './PageTitle';
-import RoundButton from './RoundButton';
+import RoundButton from './ButtonRound';
 
 const FlexDiv = styled.div`
     display: flex;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import RoundButton from '../src/components/RoundButton';
+import RoundButton from '../src/components/ButtonRound';
 
 import { action, configureActions } from '@storybook/addon-actions';
 

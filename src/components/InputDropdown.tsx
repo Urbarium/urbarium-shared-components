@@ -14,10 +14,10 @@ const Input = styled.select`
     padding-left: 15px;
 `;
 
-const getTaggedOptions = (options) => options.map(option => <option>{option}</option>)
+const getTaggedOptions = (options) => options.map(option => <option key={option}>{option}</option>)
 
-export default ({placeholder="", options=['option1']}) => 
-    <Input>
-        {[<option disabled selected hidden value="">{placeholder}</option>,
+export default ({placeholder='', options=['option1']}) => 
+    <Input defaultValue = {placeholder}>
+        {[<option disabled hidden key=''>{placeholder}</option>,
         ...getTaggedOptions(options)]}
     </Input>;

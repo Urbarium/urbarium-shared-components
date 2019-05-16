@@ -14,6 +14,6 @@ const Input = styled.input`
   padding-left: 15px;
 `;
 
-const InputTextBox = ({placeholder="", value=null}) => <Input type="text" placeholder={placeholder} value={value}></Input>;
+const InputTextBox = ({placeholder="", value=undefined}) => <Input type="text" placeholder={placeholder} value={value}></Input>;
 
 export default  InputTextBox;
