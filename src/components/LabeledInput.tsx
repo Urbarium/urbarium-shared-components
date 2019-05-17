@@ -13,20 +13,28 @@ const Div = styled.div`
     margin-bottom: 10px;
 `; 
 
-const getInput = (type, options, placeholder, fill, right) => {
+const getInput = (type, options, placeholder, fill, right, font) => {
     switch (type) {
-        case "textbox": return <InputTextBox placeholder={placeholder}/>
-        case "textarea": return <InputTextArea placeholder={placeholder} fill={fill}/>
-        case "dropdown": return <InputDropdown options={options} placeholder={placeholder}/>
-        case "checkbox" : return <InputSelection options={options} right={right}/>
-        case "radio" : return <InputSelection options={options} right={right} radio/>        
+        case "textbox": return <InputTextBox placeholder={placeholder} font={font}/>
+        case "textarea": return <InputTextArea placeholder={placeholder} fill={fill} font={font}/>
+        case "dropdown": return <InputDropdown options={options} placeholder={placeholder} font={font}/>
+        case "checkbox" : return <InputSelection options={options} right={right} font={font}/>
+        case "radio" : return <InputSelection options={options} right={right} font={font} radio/>        
     }
 }
 
-const LabeledInput = ({type="", options=[], placeholder="", label="", sub=false, fill=false, right=false}) => (
+const LabeledInput = ({
+    type = "", 
+    options = [], 
+    placeholder = "", 
+    label = "", 
+    font = {input: undefined, label: undefined}, 
+    fill = false, 
+    right = false
+}) => (
     <Div>        
-        {label ? <Label sub={sub}>{label}</Label>: ""}        
-        {getInput(type, options, placeholder, fill, right)}
+        {label ? <Label font={font.label}>{label}</Label>: ""}        
+        {getInput(type, options, placeholder, fill, right, font.input)}
     </Div>
 );
 

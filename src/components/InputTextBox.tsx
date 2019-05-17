@@ -4,7 +4,7 @@ import fonts from '../fonts';
 import styled from 'styled-components';
 
 const Input = styled.input`
-  ${fonts.defaultInput}
+  ${props => props.font ? props.font : fonts.defaultInput}
   background: ${colors.background};
   box-sizing: border-box;
   width: 180px;
@@ -14,6 +14,7 @@ const Input = styled.input`
   padding-left: 15px;
 `;
 
-const InputTextBox = ({placeholder="", value=undefined}) => <Input type="text" placeholder={placeholder} value={value}></Input>;
+const InputTextBox = ({placeholder="", value=undefined, font=undefined}) => 
+  <Input type="text" placeholder={placeholder} value={value} font={font}></Input>;
 
 export default  InputTextBox;

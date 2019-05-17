@@ -4,7 +4,7 @@ import fonts from '../fonts';
 import styled from 'styled-components';
 
 const Input = styled.select`
-    ${fonts.defaultInput};
+    ${props => props.font? props.font : fonts.defaultInput};
     background: ${colors.background};
     box-sizing: border-box;
     width: 180px;
@@ -16,8 +16,8 @@ const Input = styled.select`
 
 const getTaggedOptions = (options) => options.map(option => <option key={option}>{option}</option>)
 
-export default ({placeholder='', options=['option1']}) => 
-    <Input defaultValue = {placeholder}>
+export default ({placeholder='', options=['option1'], font=undefined}) => 
+    <Input defaultValue = {placeholder} font={font}>
         {[<option disabled hidden key=''>{placeholder}</option>,
         ...getTaggedOptions(options)]}
     </Input>;

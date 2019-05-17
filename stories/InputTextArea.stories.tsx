@@ -3,11 +3,7 @@ import {storiesOf} from '@storybook/react';
 import Input from '../src/components/InputTextArea';
 
 
-storiesOf('InputTextArea', module)
-    .add('Fill available space', () =>([
-        <p>Available Space</p>,
-        <div style={{width: "500px", height: "200px", padding:"10px", border:" 1px dashed"}}><Input fill/></div>
-    ]))
+storiesOf('InputTextArea', module)    
     .add('default size - With placeholder', () =>(
         <Input placeholder="Direccion exacta"/>
     ))
@@ -17,3 +13,7 @@ storiesOf('InputTextArea', module)
     .add('default size - Empty', () =>(
         <Input/>
     ))
+    .add('Filling available space', () =>([
+        <p style={{color: "red"}}>Available Space</p>,
+        <div style={{width: "600px", height: "200px", padding:"10px", border:" 1px red dashed"}}><Input fill/></div>
+    ]))

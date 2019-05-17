@@ -31,21 +31,36 @@ const GridBody = styled.div`
     grid-template-columns: ${props => props.columns};
 `;
 
+const inputFont = {
+    input: `
+        ${fonts.defaultAccordionLabel}
+        color: ${colors.option};
+    `,
+    label: `
+        ${fonts.defaultAccordionInput}
+        color: ${colors.black};
+    `
+}
+
+const labelFont = `
+    ${fonts.subLabel}
+    color: ${colors.passive}
+`
 const AccordionItem = ({children, index=0, title="", columns='auto'}) => 
-<Frame>
-    <FlexDiv>
+    <Frame>
         <FlexDiv>
-            <IndexP>{index+'.'}</IndexP>
-            <Label>{title}</Label>
+            <FlexDiv>
+                <IndexP>{index+'.'}</IndexP>
+                <Label>{title}</Label>
+            </FlexDiv>
+            <Label font={labelFont}>12/10/2019</Label>
+            <Label font={labelFont}>15/10/2019</Label>
+            <Label font={labelFont}>Juan Jose Alfaro</Label>
+            <Arrow/>
         </FlexDiv>
-        <Label sub>12/10/2019</Label>
-        <Label sub>15/10/2019</Label>
-        <Label sub>Juan Jose Alfaro</Label>
-        <Arrow/>
-    </FlexDiv>
-    <GridBody columns={columns}>
-        {children}
-    </GridBody>
-</Frame>
+        <GridBody columns={columns}>
+            {children}
+        </GridBody>
+    </Frame>
 
 export default  AccordionItem;

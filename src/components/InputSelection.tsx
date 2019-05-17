@@ -8,8 +8,8 @@ const Input = styled.input`
      have to change the default checkbox image */
 `
 const Label = styled.label`
-    ${fonts.optionLabel}
-    color: ${colors.option}    
+    color: ${colors.option};
+    ${props => props.font ? props.font : fonts.optionLabel}
 `
 
 const SmallDiv = styled.div`
@@ -18,23 +18,21 @@ const SmallDiv = styled.div`
 `
 const BigDiv = styled.div`
     display: grid;
-    justify-content: start;    
+    justify-content: start;
     grid-template-columns: repeat(auto-fill, minmax(150px, auto));
-    
-    
 `
-const getTaggedOptions = (options, name, right, radio) => (
+const getTaggedOptions = (options, name, right, radio, font) => (
     options.map((option, index) => (
         <SmallDiv>        
-            {right ? <Label for={option}>{option}</Label> : ""}
+            {right ? <Label htmlFor={option} font={font}>{option}</Label> : ""}
             <Input name={name}  id={option} value={option} type={radio ? 'radio' : 'checkbox'}/>
-            {right ? "" : <Label for={option}>{option}</Label>}
+            {right ? "" : <Label htmlFor={option} font={font}>{option}</Label>}
         </SmallDiv>
     ))
 )
 
-const InputSelection = ({options=['option1'], name='group1', right=false, radio=false}) => 
-<BigDiv>{getTaggedOptions(options, name, right, radio)}</BigDiv>
+const InputSelection = ({options=['option1'], name='group1', right=false, radio=false, font=undefined}) => 
+<BigDiv>{getTaggedOptions(options, name, right, radio, font)}</BigDiv>
 
 
 export default InputSelection;

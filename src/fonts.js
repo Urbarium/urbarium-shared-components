@@ -24,11 +24,22 @@ export default {
   subLabel: `
   font-family: Lato, Roboto, Sans-Serif;
   font-size: 11px;
-  letter-spacing: 0.09px;
+  letter-spacing: 0.1px;
   `,
 
   optionLabel: `
   font-family: Lato, Roboto, Sans-Serif;
   font-size: 15px;
+  `,
+
+  defaultAccordionLabel: `
+  font-family: Lato, Roboto, Sans-Serif;
+  font-size: 12px;
+  font-weight: bold;
+  `,
+
+  defaultAccordionInput: `
+  font-family: Lato, Roboto, Sans-Serif;
+  font-size: 12px;
   `
 }

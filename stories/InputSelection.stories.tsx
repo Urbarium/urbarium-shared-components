@@ -12,6 +12,9 @@ storiesOf('InputSelection', module)
     .add('Checkbox - with options', () => (
         <Input options={['Pizza', 'Breadsticks', 'Refresco 2L', 'Extra queso']}/>
     ))
+    .add('Checkbox - custom font', () => (
+        <Input options={['Pizza Mediana', 'Breadsticks', 'Refresco 2L', 'Extra queso']} font={'font-family:Sans-Serif;font-size:1.2em;color:navy;'}/>
+    ))
     .add('Radio - default', () => (
         <Input radio/>
     ))
@@ -20,6 +23,10 @@ storiesOf('InputSelection', module)
     ))
     .add('Radio - with options', () => (
         <Input radio options={['Jamon', 'Peperoni', 'Suprema', 'Margarita']}/>
+    ))
+
+    .add('Radio - custom font', () => (
+        <Input radio options={['Jamon', 'Peperoni', 'Suprema', 'Margarita']} font={';font-size:25px;color:red;'}/>
     ))
 
     
