@@ -22,7 +22,7 @@ const SpinningArrow =  styled.div`
     ::after{
         position: absolute;                        
         content: "";
-    width: 10px;
+        width: 10px;
         height: 2px;
         top: 50%;
         left: 50%;
@@ -52,8 +52,12 @@ const Button = styled.button`
     :hover ${SpinningArrow} {
         background-color: ${colors.primary};
     }
+
+    :focus {
+        outline: none;
+    }
 `
-interface Props {};
+interface Props {onClick: Function};
 interface State {animate: boolean};
 class ButtonArrow extends React.Component<Props, State>{
     constructor(props) {
@@ -63,6 +67,7 @@ class ButtonArrow extends React.Component<Props, State>{
 
     changeState() {
         this.setState({animate: !this.state.animate});
+        this.props.onClick();
     }
 
     // Notice animate on ExpandArrow below is not a react comp property

@@ -1,9 +1,13 @@
 import React from 'react';
 import AccItem from './AccordionItem';
 import Input from './LabeledInput';
+import Label from './Label';
 
 export default () =>
 <div>
+    <AccItem index={1} title='Vista preliminar solicitada' columns=''>
+        <Label>Is this one suppose to be empty? I can't tell from whats shown on Invision</Label>
+    </AccItem>
     <AccItem index={2} title='En conformacion' columns='3fr 1fr'>
         <Input type='checkbox' label='Expediente' options={[
             'Bienes inmuebles',
@@ -41,3 +45,8 @@ export default () =>
             <Input type='dropdown' placeholder='Adjuntar documento' options={['Esto deberia ser un boton de archivo, no de dropdown']}/>
     </AccItem>
 </div>
+
+
+{/* 
+    
+ */}
