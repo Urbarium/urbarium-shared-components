@@ -17,7 +17,7 @@ const Frame = styled.div`
 const FlexDiv = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
 `;
 
 const IndexP = styled.p`
@@ -32,6 +32,12 @@ const GridBody = styled.div`
     display: grid;
     grid-template-columns: ${props => props.columns};
 `;
+
+const GridHeader = styled.div`
+    display: grid;
+    grid-template-columns: 4fr 2fr 2fr 2fr 1fr;
+    justify-content: space-between;
+`
 
 const inputFont = {
     input: `
@@ -77,7 +83,7 @@ class AccordionItem extends React.Component<Props, State> {
     render() {
         return(
             <Frame>
-                <FlexDiv>
+                <GridHeader>
                     <FlexDiv>
                         <IndexP>{this.props.index+'.'}</IndexP>
                         <Label>{this.props.title}</Label>
@@ -86,7 +92,7 @@ class AccordionItem extends React.Component<Props, State> {
                     <Label font={labelFont}>15/10/2019</Label>
                     <Label font={labelFont}>Juan Jose Alfaro</Label>
                     <Arrow onClick={() => this.handleClick()}/>
-                </FlexDiv>
+                </GridHeader>
                 {this.state.closed ? "" :
                     <GridBody columns={this.props.columns}>
                         {this.insertFont(this.props.children)}
