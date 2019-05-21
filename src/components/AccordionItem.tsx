@@ -4,7 +4,7 @@ import colors from '../colors'
 import fonts from '../fonts'
 import Label from './Label';
 import Arrow from './ButtonArrow';
-import InputState from './InputState';
+import InputState from './InputState'; 
 import { isArray } from 'util';
 
 const Frame = styled.div`

@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components'
 import Input from './LabeledInput';
 import Label from './Label';
-import PageTitle from './PageTitle';
 import BeneficiariosSection from './BeneficiariosSection';
 
 const FlexDiv = styled.div`

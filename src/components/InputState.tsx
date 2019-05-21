@@ -1,9 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 // NON FUNCTIONAL, JUST A TEST TO SEE HOW IT LOOKS INSIDE THE ACCORDION MENU
 
-const Arrow =  styled.div`
+const Arrow = styled.div`
     position: relative;
     top: 13px;
     left: 80px;

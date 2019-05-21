@@ -45,8 +45,3 @@ export default () =>
             <Input type='dropdown' placeholder='Adjuntar documento' options={['Esto deberia ser un boton de archivo, no de dropdown']}/>
     </AccItem>
 </div>
-
-
-{/* 
-    
- */}
