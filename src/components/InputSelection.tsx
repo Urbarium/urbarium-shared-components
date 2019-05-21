@@ -20,6 +20,7 @@ const BigDiv = styled.div`
     display: grid;
     justify-content: start;
     grid-template-columns: repeat(auto-fill, minmax(150px, auto));
+    grid-auto-flow: dense;
 `
 const getTaggedOptions = (options, name, right, radio, font) => (
     options.map((option, index) => (

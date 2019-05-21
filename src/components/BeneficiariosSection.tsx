@@ -15,7 +15,7 @@ const FlexDiv = styled.div`
     justify-content: space-between;
 `;
 const Beneficiario = (index) => (
-    <div style={{padding: "10px"}}>
+    <div style={{margin: "20px 0"}}>
         <Label>{"Beneficiario " + index}</Label>
         <Input type="textbox" label="CEDULA" placeholder="0 0000 0000" font={subLabelFont}/>
         <FlexDiv>
@@ -29,6 +29,7 @@ const Beneficiario = (index) => (
 
 // Beneficiario button style
 const BeneficiarioButton = styled.button`
+    margin: 10px 0 15px 0;
     display: block;
     cursor: pointer;
     border: none;

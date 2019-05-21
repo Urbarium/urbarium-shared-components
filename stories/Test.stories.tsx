@@ -2,18 +2,22 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import BeneficiariosSection from '../src/components/BeneficiariosSectionTest';
 import AccTest from '../src/components/AccordionTest';
-import ButtonExpand from '../src/components/ButtonArrow';
-
+import Arrow from '../src/components/ButtonArrow';
+import State from '../src/components/InputState';
 
 storiesOf('TEST PAGE', module)
     .add('TEST - Beneficiarios con Grid', () => (
         <BeneficiariosSection/>
     ))
 
-    .add('TEST - accordion item', () => (
+    .add('TEST - Accordion Menu', () => (
         <AccTest/>
     ))
 
-    .add('TEST - Expand Button animation', () =>(
-        <ButtonExpand/>
+    .add('TEST - Arrow Button animation', () =>(
+        <Arrow onClick={undefined}/>
+    ))
+
+    .add('TEST - State', () => (
+        <State ></State>
     ))

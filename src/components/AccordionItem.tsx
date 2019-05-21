@@ -4,6 +4,7 @@ import colors from '../colors'
 import fonts from '../fonts'
 import Label from './Label';
 import Arrow from './ButtonArrow';
+import InputState from './InputState';
 import { isArray } from 'util';
 
 const Frame = styled.div`
@@ -21,7 +22,7 @@ const FlexDiv = styled.div`
 `;
 
 const IndexP = styled.p`
-    margin: 10px 5px 5px 0px;    
+    margin: 0px;    
     color: ${colors.primary};
     ${fonts.defaultLabel}
 `;
@@ -35,7 +36,8 @@ const GridBody = styled.div`
 
 const GridHeader = styled.div`
     display: grid;
-    grid-template-columns: 4fr 2fr 2fr 2fr 1fr;
+    grid-template-columns: 4fr 2fr 2fr 2fr  2fr 0.5fr;
+    align-items: center;
     justify-content: space-between;
 `
 
@@ -91,6 +93,7 @@ class AccordionItem extends React.Component<Props, State> {
                     <Label font={labelFont}>12/10/2019</Label>
                     <Label font={labelFont}>15/10/2019</Label>
                     <Label font={labelFont}>Juan Jose Alfaro</Label>
+                    <InputState/>
                     <Arrow onClick={() => this.handleClick()}/>
                 </GridHeader>
                 {this.state.closed ? "" :
