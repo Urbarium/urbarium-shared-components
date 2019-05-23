@@ -1,7 +1,16 @@
 {
   "name": "urbarium-shared-components",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "private": true,
+  "description": "A shared library for Urbarium components",
+  "license": "Apache-2.0",
+  "module": "index.js",
+  "sideEffects": false,
+  "author": "Urbariym",
+  "maintainers": [
+    "Ricardo Fernandez",
+    "Emmanuel Mora"
+  ],
   "dependencies": {
     "@storybook/addon-actions": "^5.0.11",
     "@types/react": "^16.8.14",
