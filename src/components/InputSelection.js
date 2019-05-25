@@ -5,7 +5,8 @@ import fonts from '../fonts';
 
 const Input = styled.input`
     /* Nothing yet
-     have to change the default checkbox image */
+     have to change the default checkbox image 
+     but I don't have any assets yet */
 `
 const Label = styled.label`
     color: ${colors.option};

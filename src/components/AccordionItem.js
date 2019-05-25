@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import colors from '../colors'
-import fonts from '../fonts'
+import colors from '../colors';
+import fonts from '../fonts';
 import Label from './Label';
 import Arrow from './ButtonArrow';
-import InputState from './InputState'; 
+import InputState from './InputState';
 import { isArray } from 'util';
 
 const Frame = styled.div`
@@ -22,7 +22,7 @@ const FlexDiv = styled.div`
 `;
 
 const IndexP = styled.p`
-    margin: 0px;    
+    margin: 0px;
     color: ${colors.primary};
     ${fonts.defaultLabel}
 `;
@@ -57,9 +57,7 @@ const labelFont = `
     color: ${colors.passive}
 `;
 
-interface Props {index: number, title: string, columns: string};
-interface State {closed: boolean};
-class AccordionItem extends React.Component<Props, State> {
+class AccordionItem extends React.Component {
 
     constructor(props){
         super(props)

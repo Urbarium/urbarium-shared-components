@@ -39,9 +39,7 @@ const BeneficiarioButton = styled.button`
 `;
 
 // Beneficiaros Section definiton
-interface Props {};
-interface State {benefList: JSX.Element[]};
-class BeneficiariosSection extends React.Component<Props, State> { 
+class BeneficiariosSection extends React.Component{ 
     constructor(props) {
         super(props);
         this.state = { benefList: [Beneficiario(1)]}
