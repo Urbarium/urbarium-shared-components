@@ -1,6 +1,6 @@
 import React from 'react';
 import AccItem from './AccordionItem';
-import Input from './LabeledInput';
+import { LabeledInput as Input } from './LabeledInput';
 import Label from './Label';
 
 export default () =>

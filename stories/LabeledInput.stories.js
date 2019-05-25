@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import LabeledInput from '../src/components/LabeledInput';
+import { LabeledInput } from '../src/components/LabeledInput';
 
 const customFont = {
     input: `

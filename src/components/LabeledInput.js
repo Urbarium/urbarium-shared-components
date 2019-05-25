@@ -6,8 +6,6 @@ import InputTextArea from './InputTextArea';
 import InputSelection from './InputSelection';
 import styled from 'styled-components';
 
-
-
 const Div = styled.div`
     height: 100%;
     margin-bottom: 10px;
@@ -24,8 +22,7 @@ const getInput = (type, options, placeholder, fill, right, font) => {
 
     }
 }
-
-const LabeledInput = ({
+export const LabeledInput = ({
     type = "", 
     options = [], 
     placeholder = "", 
@@ -39,5 +36,3 @@ const LabeledInput = ({
         {getInput(type, options, placeholder, fill, right, font.input)}
     </Div>
 );
-
-export default LabeledInput;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Input from './LabeledInput';
+import { LabeledInput as Input } from './LabeledInput';
 import Label from './Label';
 import Button from './ButtonText';
 import colors from '../colors';
