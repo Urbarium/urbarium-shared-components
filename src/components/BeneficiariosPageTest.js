@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
-import { LabeledInput as Input } from './LabeledInput';
+import Input from './LabeledInput';
 import Label from './Label';
 import BeneficiariosSection from './BeneficiariosSection';
 

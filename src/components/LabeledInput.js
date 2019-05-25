@@ -19,10 +19,10 @@ const getInput = (type, options, placeholder, fill, right, font) => {
         case "checkbox": return <InputSelection options={options} right={right} font={font}/>
         case "radio": return <InputSelection options={options} right={right} font={font} radio/>
         default: return null;
-
     }
 }
-export const LabeledInput = ({
+
+const LabeledInput = ({
     type = "", 
     options = [], 
     placeholder = "", 
@@ -36,3 +36,5 @@ export const LabeledInput = ({
         {getInput(type, options, placeholder, fill, right, font.input)}
     </Div>
 );
+
+export default LabeledInput;

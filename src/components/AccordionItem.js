@@ -104,4 +104,4 @@ class AccordionItem extends React.Component {
     }
 }
 
-export default  AccordionItem;
+export default AccordionItem;
