@@ -12,6 +12,10 @@ const Button = styled.button`
   border: 0px;
   color: ${colors.white};
   cursor: pointer;
+  
+  :focus{
+    outline: none;
+  }
 `;
 
 const RoundButton = ({onClick=null, children}) => <Button onClick={onClick} >{children}</Button>;

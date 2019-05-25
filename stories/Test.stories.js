@@ -1,23 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import BeneficiariosSection from '../src/components/BeneficiariosSectionTest';
-import AccTest from '../src/components/AccordionTest';
-import Arrow from '../src/components/ButtonArrow';
-import State from '../src/components/InputState';
+import BeneficiariosPage from '../src/components/BeneficiariosPageTest';
+import AccordionMenuPage from '../src/components/AccordionMenuPageTest';
 
-storiesOf('TEST PAGE', module)
-    .add('TEST - Beneficiarios con Grid', () => (
-        <BeneficiariosSection/>
+storiesOf('PAGE TESTS', module)
+    .add('TEST - Beneficiarios Page test con Grid', () => (
+        <BeneficiariosPage/>
     ))
 
     .add('TEST - Accordion Menu', () => (
-        <AccTest/>
-    ))
-
-    .add('TEST - Arrow Button animation', () =>(
-        <Arrow onClick={undefined}/>
-    ))
-
-    .add('TEST - State', () => (
-        <State ></State>
+        <AccordionMenuPage/>
     ))

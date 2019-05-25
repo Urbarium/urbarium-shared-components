@@ -15,8 +15,7 @@ const customFont = {
     `
 }
 
-
-storiesOf('LabeledInput', module)    
+storiesOf('Inputs Fields/Labeled Input', module)    
     .add('textbox input - normal label', () => (
         <LabeledInput type="textbox" label="Teléfono" placeholder="0000 0000"/>
     ))

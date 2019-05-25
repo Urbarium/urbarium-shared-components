@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import Input from  '../src/components/InputDropdown'
 
 
-storiesOf('InputDropdown', module)
+storiesOf('Inputs Fields/Dropdown Input', module)
     .add("no placeholder", () => (
         <Input options={['Izquierda', 'Derecha']}/>
     ))

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Input from './LabeledInput';
 import Label from './Label';
+import Button from './ButtonText';
 import colors from '../colors';
 import fonts from '../fonts';
 
@@ -25,18 +26,6 @@ const Beneficiario = (index) => (
         </FlexDiv>
     </div>
 );
-
-
-// Beneficiario button style
-const BeneficiarioButton = styled.button`
-    margin: 10px 0 15px 0;
-    display: block;
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-    color: ${colors.primary}
-    ${fonts.optionLabel}
-`;
 
 // Beneficiaros Section definiton
 class BeneficiariosSection extends React.Component{ 
@@ -65,10 +54,10 @@ class BeneficiariosSection extends React.Component{
             <div>
                 {this.state.benefList}
                 {this.state.benefList.length > 1 ? 
-                    <BeneficiarioButton onClick={() => this.handleClickRemove()}>Remover beneficiario -</BeneficiarioButton>
+                    <Button onClick={() => this.handleClickRemove()}>Remover beneficiario -</Button>
                     : null
                 }
-                <BeneficiarioButton onClick={() => this.handleClickAdd()}>Agregar beneficiario +</BeneficiarioButton>                
+                <Button onClick={() => this.handleClickAdd()}>Agregar beneficiario +</Button>                
             </div>
         )
     }

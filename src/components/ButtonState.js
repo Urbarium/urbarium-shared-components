@@ -1,14 +1,19 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-// NON FUNCTIONAL, JUST A TEST TO SEE HOW IT LOOKS INSIDE THE ACCORDION MENU
+const Container = styled.div`
+    height: 30px;
+    width: 100px;
+    position: relative;
+    display: flex;
+`
 
 const Arrow = styled.div`
     position: relative;
-    top: 13px;
-    left: 80px;
     width: 0px;
     height: 0px;
+    top: 14px;
+    right: 20px;
     background-color: ${props => props.color};
     ::after{
         border-radius: 1px;
@@ -29,16 +34,9 @@ const Arrow = styled.div`
         transform: translateX(32%) rotate(-45deg); 
     }
 `
-
-const Div = styled.div`
-    height: 30px;
-    width: 100px;
-`
-
 const Button = styled.button`
-    height: inherit;
-    width: inherit;
-    position: absolute;
+    height: 100%;
+    width: 100%;
     cursor: pointer;
     font-family: Sans-Serif;
     font-size: 12px;
@@ -48,6 +46,10 @@ const Button = styled.button`
     border: none;
     padding-right: 20px;
     box-sizing: border-box;
+
+    :focus {
+       outline: none;
+    }
 `
 
 const states = [
@@ -68,12 +70,11 @@ const states = [
     }
 ]
 
+
 class InputState extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            index: 0,
-        }
+        this.state = {index: 0}
     }
     cycleState(){
         let newIndex = this.state.index === 2 ? 0 : this.state.index + 1;
@@ -81,12 +82,17 @@ class InputState extends React.Component {
     }
     render() {
         return (
-            <Div onClick={() => this.cycleState()}> 
-                <Button color={states[this.state.index].color} backColor={states[this.state.index].backColor}>
+            <Container> 
+                <Button  onClick={() => this.cycleState()} 
+                    color={states[this.state.index].color} 
+                    backColor={states[this.state.index].backColor}>
+
                     {states[this.state.index].text}
+
                 </Button >
+
                 <Arrow color={states[this.state.index].color}/>
-            </Div>
+            </Container>
         )
     }
 }

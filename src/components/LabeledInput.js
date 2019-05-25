@@ -18,8 +18,10 @@ const getInput = (type, options, placeholder, fill, right, font) => {
         case "textbox": return <InputTextBox placeholder={placeholder} font={font}/>
         case "textarea": return <InputTextArea placeholder={placeholder} fill={fill} font={font}/>
         case "dropdown": return <InputDropdown options={options} placeholder={placeholder} font={font}/>
-        case "checkbox" : return <InputSelection options={options} right={right} font={font}/>
-        case "radio" : return <InputSelection options={options} right={right} font={font} radio/>        
+        case "checkbox": return <InputSelection options={options} right={right} font={font}/>
+        case "radio": return <InputSelection options={options} right={right} font={font} radio/>
+        default: return null;
+
     }
 }
 

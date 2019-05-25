@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Input from '../src/components/InputTextBox';
 
-storiesOf('InputTextBox', module)
+storiesOf('Inputs Fields/TextBox Input', module)
   .add('with placeholder', () => (
     <Input placeholder="Primer Apellido"/>
   ))

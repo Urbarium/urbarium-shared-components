@@ -9,7 +9,7 @@ const customFont = `
     color: ${colors.passive};
 `
 
-storiesOf('Label', module)
+storiesOf('Others/Label', module)
     .add('default', () => (
         <Label>Beneficiario</Label>
     ))
