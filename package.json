@@ -1,6 +1,6 @@
 {
   "name": "urbarium-shared-components",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "private": true,
   "description": "A shared library for Urbarium components",
   "license": "Apache-2.0",
@@ -21,10 +21,10 @@
     "styled-components": "^4.2.0"
   },
   "scripts": {
-    "start": "react-scripts-ts start",
-    "build": "react-scripts-ts build",
-    "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
     "storybook": "start-storybook",
     "now-build": "build-storybook -c .storybook -o dist"
   },
@@ -38,9 +38,6 @@
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.5",
     "jest": "^24.7.1",
-    "react-docgen-typescript-loader": "^3.1.0",
-    "react-scripts-ts": "latest",
-    "ts-jest": "^24.0.2",
-    "typescript": "^3.4.5"
+    "react-docgen-typescript-loader": "^3.1.0"
   }
 }
