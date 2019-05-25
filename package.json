@@ -6,7 +6,7 @@
   "license": "Apache-2.0",
   "module": "index.js",
   "sideEffects": false,
-  "author": "Urbariym",
+  "author": "Urbarium",
   "maintainers": [
     "Ricardo Fernandez",
     "Emmanuel Mora"
