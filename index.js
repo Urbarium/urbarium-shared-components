@@ -1,2 +1,3 @@
-export { default as Label } from './src/components/Label';
-export default 777;
+export { default as LabeledInput } from './src/components/LabeledInput';
+export { default as AccordionItem } from './src/components/AccordionItem';
+export { default as Beneficiarios } from './src/components/BeneficiariosSection';
