@@ -24,7 +24,6 @@ storiesOf('InputSelection', module)
     .add('Radio - with options', () => (
         <Input radio options={['Jamon', 'Peperoni', 'Suprema', 'Margarita']}/>
     ))
-
     .add('Radio - custom font', () => (
         <Input radio options={['Jamon', 'Peperoni', 'Suprema', 'Margarita']} font={';font-size:25px;color:red;'}/>
     ))

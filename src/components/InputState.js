@@ -68,22 +68,17 @@ const states = [
     }
 ]
 
-interface Props {};
-interface State {index: number};
-class InputState extends React.Component<Props, State> {
+class InputState extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             index: 0,
         }
-        
     }
-
     cycleState(){
         let newIndex = this.state.index === 2 ? 0 : this.state.index + 1;
         this.setState({index: newIndex})
     }
-
     render() {
         return (
             <Div onClick={() => this.cycleState()}> 
