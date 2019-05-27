@@ -1,42 +1,13 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import Arrow from './Arrow';
 
-const Container = styled.div`
-    height: 30px;
-    width: 100px;
-    position: relative;
-    display: flex;
-`
 
-const Arrow = styled.div`
-    position: relative;
-    width: 0px;
-    height: 0px;
-    top: 14px;
-    right: 20px;
-    background-color: ${props => props.color};
-    ::after{
-        border-radius: 1px;
-        position: absolute;                        
-        content: "";
-        width: 6px;
-        height: 2px;
-        background-color: inherit;
-        transform: translateX(-32%) rotate(45deg);        
-    }
-    ::before{
-        border-radius: 1px;
-        position: absolute;                        
-        content: "";
-        width: 6px;
-        height: 2px;
-        background-color: inherit;
-        transform: translateX(32%) rotate(-45deg); 
-    }
-`
 const Button = styled.button`
-    height: 100%;
-    width: 100%;
+    height: 30px;
+    width: 105px;
+    display: flex;
+    direction: row;
     cursor: pointer;
     font-family: Sans-Serif;
     font-size: 12px;
@@ -44,12 +15,19 @@ const Button = styled.button`
     color: ${props => props.color};
     background-color: ${props => props.backColor};
     border: none;
-    padding-right: 20px;
     box-sizing: border-box;
-
+    padding-left: 15px;
     :focus {
        outline: none;
     }
+`
+
+const ArrowContainer = styled.div`
+    position: relative;
+    width: 0px;
+    height: 0px;
+    bottom: 15px;
+    left: 85px;
 `
 
 const states = [
@@ -68,10 +46,10 @@ const states = [
         color: "white",
         backColor: "#7ED321",
     }
-]
+];
 
 
-class InputState extends React.Component {
+class ButtonState extends React.Component {
     constructor(props) {
         super(props);
         this.state = {index: 0}
@@ -82,19 +60,18 @@ class InputState extends React.Component {
     }
     render() {
         return (
-            <Container> 
-                <Button  onClick={() => this.cycleState()} 
-                    color={states[this.state.index].color} 
-                    backColor={states[this.state.index].backColor}>
-
-                    {states[this.state.index].text}
-
-                </Button >
-
-                <Arrow color={states[this.state.index].color}/>
-            </Container>
+                <div class="button-state-container">
+                    <Button  onClick={() => this.cycleState()} 
+                        color={states[this.state.index].color} 
+                        backColor={states[this.state.index].backColor}>                                    
+                        {states[this.state.index].text}                     
+                    </Button>
+                    <ArrowContainer>
+                        <Arrow color={states[this.state.index].color} size={6}/> 
+                    </ArrowContainer>
+                </div>
         )
     }
 }
 
-export default InputState;
+export default ButtonState;

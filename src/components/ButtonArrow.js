@@ -1,66 +1,32 @@
 import React from 'react';
 import styled from 'styled-components/macro'
 import colors from '../colors';
+import Arrow from './Arrow';
 
-const SpinningArrow =  styled.div`
-    width: 0px;
-    height: 0px;
-    transition: transform 0.2s;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    background-color: ${colors.passive};
-
-    &[data-animate=true] {
-        transform: rotate(180deg);
-    }
-
-    /*    Long and boring css code below to create the arrow because I have no assets for the icons yet */
-    
-    ::after{
-        position: absolute;                        
-        content: "";
-        width: 10px;
-        height: 2px;
-        top: 50%;
-        left: 50%;
-        background-color: inherit;
-        transform: translate(-84%, -50%) rotate(45deg);        
-    }
-
-    ::before{
-        position: absolute;                        
-        content: "";
-        width: 10px;
-        height: 2px;
-        top: 50%;
-        right: 50%;
-        background-color: inherit;
-        transform: translate(84%, -50%) rotate(-45deg); 
-    }
-`
 const Button = styled.button`
     border: none;
     position: relative;
     width: 20px;
-    height: 15px;
+    height: 20px;
     background-color: transparent;
     cursor: pointer;
+    transition: transform 0.2s;
 
-    :hover ${SpinningArrow} {
-        background-color: ${colors.primary};
+    &[data-animate=true] {
+        transform: rotate(180deg);
     }
 
     :focus {
         outline: none;
     }
 `
-interface Props {onClick: Function};
-interface State {animate: boolean};
-class ButtonArrow extends React.Component<Props, State>{
+
+class ButtonArrow extends React.Component{
     constructor(props) {
         super(props);
-        this.state = {animate: false};
+        this.state = {animate: false, color: colors.passive};
+        onmouseenter = 
+        onmouseleave = () => this.setState({animate: false, color: colors.passive})
     }
 
     changeState() {
@@ -68,12 +34,14 @@ class ButtonArrow extends React.Component<Props, State>{
         this.props.onClick();
     }
 
-    // Notice animate on ExpandArrow below is not a react comp property
-    //  instead it is an html data-attribute, css does not see react props...
+    // Button needs a data-attribute so css can read it and execute the animation
     render() {
         return(
-            <Button onMouseDown={() => this.changeState()}>                
-                <SpinningArrow data-animate={this.state.animate}/>
+            <Button data-animate={this.state.animate}
+                onMouseDown={() => this.changeState()} 
+                onMouseEnter={() => this.setState({...this.state, color: colors.primary})}
+                onMouseLeave={() => this.setState({...this.state, color: colors.passive})}>                
+                <Arrow size={10} color={this.state.color}/>
             </Button>
         )
     }
