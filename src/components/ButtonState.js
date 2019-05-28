@@ -67,7 +67,7 @@ class ButtonState extends React.Component {
                         {states[this.state.index].text}                     
                     </Button>
                     <ArrowContainer>
-                        <Arrow color={states[this.state.index].color} size={6}/> 
+                        <Arrow color={states[this.state.index].color} width={6}/> 
                     </ArrowContainer>
                 </div>
         )

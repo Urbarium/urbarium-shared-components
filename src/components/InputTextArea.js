@@ -9,7 +9,7 @@ const TextArea = styled.textarea`
   box-sizing: border-box;
   width: ${props => props.fill ? " 100%;" : "360px"};
   height:${props => props.fill ? " 100%;" : "108px"};
-  border-radius: 18px;
+  border-radius: 15px;
   border: 1px ${colors.passive} solid;
   padding-left: 15px;
   padding-top: 10px;

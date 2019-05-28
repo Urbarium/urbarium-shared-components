@@ -7,9 +7,9 @@ const Input = styled.input`
   ${props => props.font ? props.font : fonts.defaultInput}
   background: ${colors.background};
   box-sizing: border-box;
-  width: 180px;
-  height: 36px;
-  border-radius: 18px;
+  width: 190px;
+  height: 30px;
+  border-radius: 15px;
   border: 1px ${colors.passive} solid;
   padding-left: 15px;
 `;

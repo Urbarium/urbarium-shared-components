@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import colors from '../colors';
 
 const Arrow = styled.div`
     background-color: ${props => props.color};
@@ -12,26 +13,26 @@ const Arrow = styled.div`
     ::after{
         position: absolute;                        
         content: "";
-        width: ${props => props.size}px;
-        height: ${props => props.size / 4}px;
-        border-radius: ${props => props.size / 10}px;
+        width: ${props => props.width}px;
+        height: ${props => props.height}px;
+        border-radius: ${props => props.height / 2}px;
         top: 50%;
         left: 50%;
         background-color: inherit;
-        transform: translate(-79%, -50%) rotate(45deg);
+        transform: translate(-88%, -50%) rotate(40deg);
     }
 
     ::before{
-        position: absolute;                        
+        position: absolute;
         content: "";
-        width: ${props => props.size}px;
-        height: ${props => props.size / 4}px;
-        border-radius: ${props => props.size / 10}px;
+        width: ${props => props.width}px;
+        height: ${props => props.height}px;
+        border-radius: ${props => props.height / 2}px;
         top: 50%;
         right: 50%;
         background-color: inherit;
-        transform: translate(79%, -50%) rotate(-45deg); 
+        transform: translate(88%, -50%) rotate(-40deg);
     }
 `
 
-export default ({size, color}) => <Arrow size={size} color={color}/>
+export default ({width = 10, height = 2, color = colors.primary}) => <Arrow  width={width} height={height} color={color}/>

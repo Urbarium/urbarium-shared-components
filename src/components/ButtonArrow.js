@@ -41,7 +41,7 @@ class ButtonArrow extends React.Component{
                 onMouseDown={() => this.changeState()} 
                 onMouseEnter={() => this.setState({...this.state, color: colors.primary})}
                 onMouseLeave={() => this.setState({...this.state, color: colors.passive})}>                
-                <Arrow size={10} color={this.state.color}/>
+                <Arrow width={9} color={this.state.color}/>
             </Button>
         )
     }

@@ -9,7 +9,7 @@ import { isArray } from 'util';
 
 const Frame = styled.div`
     border: 1px ${colors.passive} solid;
-    border-radius: 18px;
+    border-radius: 15px;
     padding: 15px 25px;
     margin: 5px 0px;
     max-width: 800px;
