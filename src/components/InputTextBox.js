@@ -17,35 +17,19 @@ const Input = styled.input`
   :focus {
     outline: none;
   }
+
+  ::placeholder {
+    color: ${colors.placeholder};
+  }
 `;
 
-class InputTextBox extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {data: this.props.data};
-  };
-
-  handleOnChange(event) {
-    this.setState({data: event.target.value});
-  };
-
-  render() {
-    return (
-      <Input 
-        type = "text" 
-        placeholder = {this.props.placeholder} 
-        value = {this.state.data} 
-        font = {this.props.font}
-        onChange = {(event) => this.handleOnChange(event)}
-      />
-    );
-  };
-}
-
-InputTextBox.defaultProps = {
-  placeholder: "",
-  font: fonts.defaultInput,
-  data: undefined,
-};
+const InputTextBox = ({placeholder = "", font = fonts.defaultInput, data = undefined}) => (
+  <Input
+    type = "text"
+    placeholder = {placeholder}
+    defaultValue = {data}
+    font = {font}
+  />
+);
 
 export default InputTextBox;

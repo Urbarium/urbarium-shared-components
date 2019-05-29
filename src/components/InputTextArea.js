@@ -19,37 +19,19 @@ const TextArea = styled.textarea`
   :focus {
     outline: none;
   }
+
+  ::placeholder {
+    color: ${colors.placeholder};
+  }
 `
-
-class InputTextArea extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {data: this.props.data};
-  };
-
-  handleOnChange(event) {
-    this.setState({data: event.target.value});
-  };
-
-  render() {
-    return(
-      <TextArea
-        placeholder = {this.props.placeholder}
-        value = {this.state.data}
-        fill = {this.props.fill}
-        font = {this.props.font}
-        onChange = {(event) => this.handleOnChange(event)}
-      />
-    );
-  };
-};
-
-InputTextArea.defaultProps = {
-  placeholder: "",
-  data: undefined,
-  fill: undefined,
-  font: fonts.defaultInput,
-};
+const InputTextArea = ({placeholder = "", data = undefined, fill = false, font = fonts.defaultInput}) => (
+  <TextArea
+    placeholder = {placeholder}
+    defaultValue = {data}
+    fill = {fill}
+    font = {font}
+  />
+);
 
 export default InputTextArea;
 

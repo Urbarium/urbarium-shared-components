@@ -2,7 +2,8 @@ export default {
   primary: '#994F7E',
   secondary: '#EBEDF8',
   background: '#FFFFFF',
-  passive: '#C0C5D2',
+  placeholder: '#C0C5D2',
+  passive: '#b4b9c4',
   option: '#8A96A0',
   action: {
     primary:'#99BF24',
