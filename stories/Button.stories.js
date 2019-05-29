@@ -17,6 +17,10 @@ storiesOf('Buttons/State Button', module)
   .add('Default', () => (
     <StateButton ></StateButton>
   ));
+  storiesOf('Buttons/State Button', module)
+  .add('State Set', () => (
+    <StateButton state={2}></StateButton>
+  ));
 
 storiesOf('Buttons/Arrow Button', module)
   .add('Default', () =>(

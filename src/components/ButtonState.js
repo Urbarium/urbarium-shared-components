@@ -52,7 +52,7 @@ const states = [
 class ButtonState extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {index: 0}
+        this.state = {index: this.props.state - 1}
     }
     cycleState(){
         let newIndex = this.state.index === 2 ? 0 : this.state.index + 1;
@@ -72,6 +72,10 @@ class ButtonState extends React.Component {
                 </div>
         )
     }
+}
+
+ButtonState.defaultProps = {
+    state: 1,
 }
 
 export default ButtonState;

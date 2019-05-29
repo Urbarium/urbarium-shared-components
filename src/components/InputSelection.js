@@ -14,8 +14,7 @@ const Label = styled.label`
 `
 
 const SmallDiv = styled.div`
-    margin: 10px;
-    margin-left: 0px;
+    margin: 10px 10px 0 0;
 `
 const BigDiv = styled.div`
     display: grid;

@@ -27,6 +27,12 @@ export default {
   letter-spacing: 0.1px;
   `,
 
+  accLabel: `
+  font-family: Lato, Roboto, Sans-Serif;
+  font-size: 12px;
+  letter-spacing: 0.1px;
+  `,
+
   optionLabel: `
   font-family: Lato, Roboto, Sans-Serif;
   font-size: 15px;

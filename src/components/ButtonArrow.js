@@ -25,8 +25,6 @@ class ButtonArrow extends React.Component{
     constructor(props) {
         super(props);
         this.state = {animate: false, color: colors.passive};
-        onmouseenter = 
-        onmouseleave = () => this.setState({animate: false, color: colors.passive})
     }
 
     changeState() {
