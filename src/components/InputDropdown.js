@@ -4,8 +4,8 @@ import fonts from '../fonts';
 import styled from 'styled-components';
 import Arrow from './Arrow';
 
-const Input = styled.select`
-    ${props => props.font? props.font : fonts.defaultInput};
+const DropDown = styled.select`
+    ${props => props.font}
     background: ${colors.background};
     box-sizing: border-box;
     width: 190px;
@@ -15,6 +15,17 @@ const Input = styled.select`
     padding-left: 15px;
     appearance: none;
 
+    :focus {
+        outline: none;
+    }
+
+    &[data-default=true] {
+        color: ${colors.placeholder};
+    }
+
+    option {
+        color: black;
+    }
 `;
  const ArrowContainer = styled.div`
     width: 0px;
@@ -25,17 +36,46 @@ const Input = styled.select`
  `
 
 // have to turn this into a more complex react component, preloading data is not working 
+class InputDropDown extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {default: !this.props.data};
+    };
 
-const getTaggedOptions = (options, selectedKey) => options.map((option, index) => 
-    <option key={option} selected={index+1===selectedKey}>{option}</option>)
+    handleOnChange(event) { 
+        this.setState({default: false});
+    };
 
-export default ({placeholder='', options=['option1'], data={undefined}, font=undefined}) => 
-    <div class="dropdown-input-wrapper">
-        <Input defaultValue = {placeholder} font={font}>
-            {[<option hidden selected={false} key=''>{placeholder}</option>, 
-            ...getTaggedOptions(options, data)]}
-        </Input>
-        <ArrowContainer>
-            <Arrow width={8} color={colors.primary}/>
-        </ArrowContainer>
-    </div>
+    getOptions(options) {
+        return options.map(option => <option value={option} key={option}>{option}</option>)
+    }
+
+    render() {
+        const data = this.props.data;
+        const options = this.props.options; 
+        return(
+            <div className="InputDropDown">
+                {/* data-default is used as a data property to alter style using css selectors*/}
+                <DropDown data-default={this.state.default} 
+                        defaultValue={data ? options[data - 1] : this.props.placeholder} 
+                        font={this.props.font}
+                        onChange={(event) => this.handleOnChange(event)}>
+                    {[<option hidden value="" key=" ">{this.props.placeholder}</option>, 
+                    ...this.getOptions(options)]}
+                </DropDown>
+                <ArrowContainer>
+                    <Arrow width={8} color={colors.primary}/>
+                </ArrowContainer>
+            </div>
+        );
+    };
+};
+
+InputDropDown.defaultProps = {
+    placeholder: "",
+    options: ["option 1"],
+    data: undefined,
+    font: fonts.defaultInput,
+};
+
+export default InputDropDown;
