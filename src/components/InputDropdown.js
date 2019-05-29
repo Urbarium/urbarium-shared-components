@@ -24,14 +24,16 @@ const Input = styled.select`
     left: 170px;
  `
 
+// have to turn this into a more complex react component, preloading data is not working 
 
-const getTaggedOptions = (options) => options.map(option => <option key={option}>{option}</option>)
+const getTaggedOptions = (options, selectedKey) => options.map((option, index) => 
+    <option key={option} selected={index+1===selectedKey}>{option}</option>)
 
-export default ({placeholder='', options=['option1'], font=undefined}) => 
+export default ({placeholder='', options=['option1'], data={undefined}, font=undefined}) => 
     <div class="dropdown-input-wrapper">
         <Input defaultValue = {placeholder} font={font}>
-            {[<option disabled hidden key=''>{placeholder}</option>, 
-            ...getTaggedOptions(options)]}
+            {[<option hidden selected={false} key=''>{placeholder}</option>, 
+            ...getTaggedOptions(options, data)]}
         </Input>
         <ArrowContainer>
             <Arrow width={8} color={colors.primary}/>

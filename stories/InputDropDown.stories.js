@@ -4,10 +4,12 @@ import Input from  '../src/components/InputDropdown'
 
 
 storiesOf('Inputs Fields/Dropdown Input', module)
-    .add("no placeholder", () => (
+    .add("No placeholder", () => (
         <Input options={['Izquierda', 'Derecha']}/>
     ))
-
-    .add("with placeholder", () => (
-        <Input placeholder='Provincia' options={['San Jose', 'Alajuela', 'Heredia', 'Cartago', 'Limon', 'Puntarenas', 'Guancaste']}/>
+    .add("With placeholder", () => (
+        <Input placeholder='Provincia' options={['San Jose', 'Alajuela', 'Heredia', 'Cartago', 'Limon', 'Puntarenas', 'Guanacaste']}/>
+    ))
+    .add("Preselected", () => (
+        <Input placeholder='Provincia' data={3} options={['San Jose', 'Alajuela', 'Heredia', 'Cartago', 'Limon', 'Puntarenas', 'Guanacaste']}/>
     ))

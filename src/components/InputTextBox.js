@@ -1,10 +1,11 @@
 import React from 'react';
+import styled from 'styled-components/macro';
 import colors from '../colors';
 import fonts from '../fonts';
-import styled from 'styled-components/macro';
+
 
 const Input = styled.input`
-  ${props => props.font ? props.font : fonts.defaultInput}
+  ${props => props.font}
   background: ${colors.background};
   box-sizing: border-box;
   width: 190px;
@@ -12,9 +13,39 @@ const Input = styled.input`
   border-radius: 15px;
   border: 1px ${colors.passive} solid;
   padding-left: 15px;
+
+  :focus {
+    outline: none;
+  }
 `;
 
-const InputTextBox = ({placeholder="", value=undefined, font=undefined}) => 
-  <Input type="text" placeholder={placeholder} value={value} font={font}></Input>;
+class InputTextBox extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {data: this.props.data};
+  };
 
-export default  InputTextBox;
+  handleOnChange(event) {
+    this.setState({data: event.target.value});
+  };
+
+  render() {
+    return (
+      <Input 
+        type = "text" 
+        placeholder = {this.props.placeholder} 
+        value = {this.state.data} 
+        font = {this.props.font}
+        onChange = {(event) => this.handleOnChange(event)}
+      />
+    );
+  };
+}
+
+InputTextBox.defaultProps = {
+  placeholder: "",
+  font: fonts.defaultInput,
+  data: undefined,
+};
+
+export default InputTextBox;

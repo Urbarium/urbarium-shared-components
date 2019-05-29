@@ -4,13 +4,13 @@ import Input from '../src/components/InputTextArea';
 
 
 storiesOf('Inputs Fields/TextArea Input', module)    
-    .add('default size - With placeholder', () =>(
+    .add('Default size - With placeholder', () =>(
         <Input placeholder="Direccion exacta"/>
     ))
-    .add('default size - With values', () =>(
-        <Input value="Texto de prueba"></Input>
+    .add('Default size - With data', () =>(
+        <Input data="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
     ))
-    .add('default size - Empty', () =>(
+    .add('Default size - Empty', () =>(
         <Input/>
     ))
     .add('Filling available space', () =>([

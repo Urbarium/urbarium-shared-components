@@ -10,7 +10,7 @@ const Input = styled.input`
 `
 const Label = styled.label`
     color: ${colors.option};
-    ${props => props.font ? props.font : fonts.optionLabel}
+    ${props => props.font}
 `
 
 const SmallDiv = styled.div`
@@ -23,18 +23,64 @@ const BigDiv = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(150px, auto));
     grid-auto-flow: dense;
 `
-const getTaggedOptions = (options, name, right, radio, font) => (
-    options.map((option, index) => (
-        <SmallDiv>        
-            {right ? <Label htmlFor={option} font={font}>{option}</Label> : ""}
-            <Input name={name}  id={option} value={option} type={radio ? 'radio' : 'checkbox'}/>
-            {right ? "" : <Label htmlFor={option} font={font}>{option}</Label>}
+
+class SelectionOption extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {data: this.props.data};
+    };
+
+    handleOnChange(event) {
+        this.setState({data: event.target.checked})
+    };
+
+    getLabel() { 
+        return (
+            <Label htmlFor = {this.props.value} font = {this.props.font}>
+                {this.props.value}
+            </Label>
+        );
+    };
+
+    render() {
+      return(
+        <SmallDiv>
+            {this.props.right ? this.getLabel() : null}
+            <Input            
+                id = {this.props.value}
+                value = {this.props.value}
+                name = {this.props.name}
+                type = {this.props.radio ? "radio" : "checkbox"}
+                checked = {this.state.data}
+                onChange = {(event) => this.handleOnChange(event)}
+            />
+            {this.props.right ? null : this.getLabel()}
         </SmallDiv>
-    ))
-)
+      );  
+    };
+};
 
-const InputSelection = ({options=['option1'], name='group1', right=false, radio=false, font=undefined}) => 
-<BigDiv>{getTaggedOptions(options, name, right, radio, font)}</BigDiv>
+function getInputOptions(data = [], options = ["option1"], name = "group", 
+right = false, radio = false, font = fonts.optionLabel) {
+    return (
+        options.map((option, index) => {
+            return (
+            <SelectionOption
+                data = {data.indexOf(index + 1) !== -1}
+                value = {option}
+                name = {name}
+                right = {right}
+                font = {font}
+                radio = {radio}
+            />)}
+        )
+    );
+};
 
+const InputSelection = ({data, options, name, right, radio, font}) => (
+    <BigDiv>
+        {getInputOptions(data, options, name, right, radio, font)}
+    </BigDiv>
+);
 
 export default InputSelection;

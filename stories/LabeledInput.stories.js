@@ -20,7 +20,7 @@ storiesOf('Inputs Fields/Labeled Input', module)
         <LabeledInput type="textbox" label="Teléfono" placeholder="0000 0000"/>
     ))
     .add('textbox input - no label', () => (
-        <LabeledInput type="textbox" placeholder="some placeholder"/>
+        <LabeledInput data="some text" type="textbox" placeholder="some placeholder"/>
     ))
     .add('textbox input - custom font', ()=> ([
         <LabeledInput type="textbox" font={customFont} label="NOMBRE" placeholder="Nombre"/>,
@@ -41,18 +41,19 @@ storiesOf('Inputs Fields/Labeled Input', module)
         <LabeledInput type="textarea" placeholder="this is placeholder text" label="Label"/>
     ))        
     .add('textarea input - no label', ()=> (
-        <LabeledInput type="textarea" />
+        <LabeledInput data="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." type="textarea" />
     ))
     .add('textarea input - custom font', ()=> (
         <LabeledInput type="textarea" placeholder="introduzca su texto aqui" label="Label" font={customFont}/>
     ))
 
     .add('checkbox input - no label', ()=> (
-        <LabeledInput type="checkbox" options={['Opcion 1', 'Opcion 2', 'Opcion 3']} />
+        <LabeledInput type="checkbox" options={['Opcion 1', 'Opcion 2', 'Opcion 3']} data={[3,1]}/>
     ))    
     .add('radio input - normal label', ()=> (
-        <LabeledInput type="radio" label='Seleccion unica'  options={['Opcion 1', 'Opcion 2', 'Opcion 3']}/>
+        <LabeledInput type="radio" label='Seleccion unica'  options={['Opcion 1', 'Opcion 2', 'Opcion 3']} data={[2]}/>
     ))
     .add('checkbox input - custom font', ()=> (
-        <LabeledInput type="checkbox" label='Seleccion multiple'  options={['Opcion 1', 'Opcion 2', 'Opcion 3']} font={customFont}/>
+        <LabeledInput type="checkbox" label='Seleccion multiple'  options={['Opcion 1', 'Opcion 2', 'Opcion 3']} data={[1]} font={customFont}/>
     ))
+    

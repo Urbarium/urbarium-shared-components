@@ -11,7 +11,7 @@ const Arrow = styled.div`
     left: 50%;
 
     ::after{
-        position: absolute;                        
+        position: absolute;
         content: "";
         width: ${props => props.width}px;
         height: ${props => props.height}px;

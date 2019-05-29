@@ -6,6 +6,9 @@ storiesOf('Inputs Fields/Selection Input', module)
     .add('Checkbox - default', () => (
         <Input/>
     ))
+    .add('Checkbox - checked', () => (
+        <Input options={["checked", "not checked", "also checked"]} data={[1,3]}/>
+    ))
     .add('Checkbox - box on right', () => (
         <Input right/>
     ))
@@ -17,6 +20,9 @@ storiesOf('Inputs Fields/Selection Input', module)
     ))
     .add('Radio - default', () => (
         <Input radio/>
+    ))
+    .add('Radio - checked', () => (
+        <Input radio options={["not checked", "checked", "overrride?"]} data={[2]}/>
     ))
     .add('Radio - box on right', () => (
         <Input right radio/>

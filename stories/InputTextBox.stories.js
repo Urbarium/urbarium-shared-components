@@ -3,13 +3,15 @@ import { storiesOf } from '@storybook/react';
 import Input from '../src/components/InputTextBox';
 
 storiesOf('Inputs Fields/TextBox Input', module)
-  .add('with placeholder', () => (
+  .add('With placeholder', () => (
     <Input placeholder="Primer Apellido"/>
   ))
-  .add('with values', () => (
-    <Input value="Salas"/>
+  .add('With data', () => (
+    <div> 
+      <Input data="Salas"/>
+    </div>
   ))
-  .add('empty', () => (
+  .add('Empty', () => (
     <Input/>
   ))
 
