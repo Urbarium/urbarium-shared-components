@@ -5,6 +5,7 @@ import InputTextBox from './InputTextBox';
 import InputDropdown from './InputDropdown';
 import InputTextArea from './InputTextArea';
 import InputSelection from './InputSelection';
+import InputCheckbox from './InputCheckbox';
 
 
 const Div = styled.div`
@@ -17,7 +18,7 @@ const getInput = (type, data, options, placeholder, fill, right, font) => {
         case "textbox": return <InputTextBox data={data} placeholder={placeholder} font={font}/>
         case "textarea": return <InputTextArea data={data} placeholder={placeholder} fill={fill} font={font}/>
         case "dropdown": return <InputDropdown data={data} options={options} placeholder={placeholder} font={font}/>
-        case "checkbox": return <InputSelection data={data} options={options} right={right} font={font}/>
+        case "checkbox": return <InputCheckbox data={data} options={options} right={right} font={font}/>
         case "radio": return <InputSelection data={data} options={options} right={right} font={font} radio/>
         default: return null;
     }
