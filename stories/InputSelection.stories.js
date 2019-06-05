@@ -2,7 +2,7 @@ import React from 'react';
 import {storiesOf} from '@storybook/react';
 import Input from '../src/components/InputSelection';
 
-storiesOf('Inputs Fields/Selection Input', module)
+storiesOf('Input Fields/Selection Input', module)
     .add('Checkbox - default', () => (
         <Input/>
     ))

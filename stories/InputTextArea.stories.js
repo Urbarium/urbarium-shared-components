@@ -3,7 +3,7 @@ import {storiesOf} from '@storybook/react';
 import Input from '../src/components/InputTextArea';
 
 
-storiesOf('Inputs Fields/TextArea Input', module)    
+storiesOf('Input Fields/TextArea Input', module)    
     .add('Default size - With placeholder', () =>(
         <Input placeholder="Direccion exacta"/>
     ))

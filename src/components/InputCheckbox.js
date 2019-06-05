@@ -56,9 +56,9 @@ const Input = styled.input`
 	}
 `
 
-const Label = styled.p`
-    ${props => props.font}
+const Label = styled.p`    
     color: ${colors.option};
+    ${props => props.font}
 	display: inline;
 	margin: 0px 10px;
 	::selection {
@@ -119,7 +119,6 @@ const InputCheckbox = ({data = [], options = ["Option 1"], right, font, size, ch
                 <CheckboxOption
                     data = {data.indexOf(index + 1) !== -1}
                     value = {option}
-
                     right = {right}
                     font = {font}
                     size = {size}
