@@ -6,7 +6,6 @@ import Button from './ButtonText';
 import colors from '../colors';
 import fonts from '../fonts';
 
-
 // Single beneficiaro definition
 const subLabelFont = `${fonts.subLabel} color: ${colors.passive};`
 
@@ -16,14 +15,14 @@ const FlexDiv = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
 `;
-const Beneficiario = (index) => (
+const Beneficiario = ({index, cedula, nombre, apellido1, apellido2}) => (
     <div style={{margin: "20px 0"}}>
         <Label>{"Beneficiario " + index}</Label>
-        <Input type="textbox" label="CEDULA" placeholder="0 0000 0000" labelFont={subLabelFont}/>
+        <Input type="textbox" label="CEDULA" placeholder="0 0000 0000" data={cedula} labelFont={subLabelFont}/>
         <FlexDiv>
-            <Input type="textbox" label="NOMBRE" placeholder="Nombre" labelFont={subLabelFont}/>
-            <Input type="textbox" label="PRIMER APELLIDO" placeholder="Primer apellido" labelFont={subLabelFont}/>
-            <Input type="textbox" label="SEGUNDO APELLIDO" placeholder="Segundo apellido" labelFont={subLabelFont}/>
+            <Input type="textbox" label="NOMBRE" placeholder="Nombre" data={nombre} labelFont={subLabelFont}/>
+            <Input type="textbox" label="PRIMER APELLIDO" placeholder="Primer apellido" data={apellido1} labelFont={subLabelFont}/>
+            <Input type="textbox" label="SEGUNDO APELLIDO" placeholder="Segundo apellido" data={apellido2} labelFont={subLabelFont}/>
         </FlexDiv>
     </div>
 );
@@ -32,12 +31,20 @@ const Beneficiario = (index) => (
 class BeneficiariosSection extends React.Component{ 
     constructor(props) {
         super(props);
-        this.state = { benefList: [Beneficiario(1)]}
+        this.state = { benefList: this.getBeneficiarios(this.props.data)}
+    }
+
+    getBeneficiarios(beneficiarios){
+        return (
+            beneficiarios.map((beneficiario, index)  => (
+                <Beneficiario {...Object.assign({}, {index: index + 1}, beneficiario)}/>)
+            )
+        )
     }
 
     handleClickAdd() {
         const newList = this.state.benefList.slice();
-        newList.push(Beneficiario(newList.length + 1))
+        newList.push(Beneficiario({index: newList.length + 1}))
         this.setState({
             benefList: newList,
         })
@@ -56,12 +63,15 @@ class BeneficiariosSection extends React.Component{
                 {this.state.benefList}
                 {this.state.benefList.length > 1 ? 
                     <Button onClick={() => this.handleClickRemove()}>Remover beneficiario -</Button>
-                    : null
-                }
+                    : null}
                 <Button onClick={() => this.handleClickAdd()}>Agregar beneficiario +</Button>                
             </div>
         )
     }
 };
+
+BeneficiariosSection.defaultProps = {
+    data: [{}]
+}
 
 export default BeneficiariosSection;

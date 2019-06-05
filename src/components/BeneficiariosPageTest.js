@@ -25,6 +25,28 @@ const Wrapper = styled.div`
     position:absolute;
 `
 
+// Sample Beneficiario Section data
+const beneficiariosData = [
+    {
+        cedula: 114140369,
+        nombre: "Pepito",
+        apellido1: "Rojas",
+        apellido2: "Azules"
+    },
+    {
+        cedula: 214140879,
+        nombre: "Spider",
+        apellido1: "Pig",
+        apellido2: "Spider Pig"
+    },
+    {
+        cedula: 114946369,
+        nombre: "Mary",
+        apellido1: "Jane",
+        apellido2: "Watson"
+    }
+]
+
 // static options test for dropdown menus
 // this needs to change dynamically with the selected options
 const provincias = ["San Jose", "Alajuela", "Heredia", "Cartago", "Puntarenas", "Limon", "Guanacaste"]
@@ -36,7 +58,7 @@ const distritos = ["Carmen", "Merced", "Hospital", "Catedral", "BLABLA"]
 // probably have to make this more modular
 export default () => (
     <Wrapper>
-            <BeneficiariosSection/>
+            <BeneficiariosSection data={beneficiariosData}/>
             <Label>Dirección</Label>
             <FlexDiv>
                 <Input type="dropdown" placeholder="Provincia" options={provincias}/>
