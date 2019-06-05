@@ -8,7 +8,8 @@ import fonts from '../fonts';
 
 
 // Single beneficiaro definition
-const subLabelFont = {input: undefined, label: `${fonts.subLabel} color: ${colors.passive};`};
+const subLabelFont = `${fonts.subLabel} color: ${colors.passive};`
+
 const FlexDiv = styled.div`
     display: flex;
     flex-direction: row;
@@ -18,11 +19,11 @@ const FlexDiv = styled.div`
 const Beneficiario = (index) => (
     <div style={{margin: "20px 0"}}>
         <Label>{"Beneficiario " + index}</Label>
-        <Input type="textbox" label="CEDULA" placeholder="0 0000 0000" font={subLabelFont}/>
+        <Input type="textbox" label="CEDULA" placeholder="0 0000 0000" labelFont={subLabelFont}/>
         <FlexDiv>
-            <Input type="textbox" label="NOMBRE" placeholder="Nombre" font={subLabelFont}/>
-            <Input type="textbox" label="PRIMER APELLIDO" placeholder="Primer apellido" font={subLabelFont}/>
-            <Input type="textbox" label="SEGUNDO APELLIDO" placeholder="Segundo apellido" font={subLabelFont}/>
+            <Input type="textbox" label="NOMBRE" placeholder="Nombre" labelFont={subLabelFont}/>
+            <Input type="textbox" label="PRIMER APELLIDO" placeholder="Primer apellido" labelFont={subLabelFont}/>
+            <Input type="textbox" label="SEGUNDO APELLIDO" placeholder="Segundo apellido" labelFont={subLabelFont}/>
         </FlexDiv>
     </div>
 );

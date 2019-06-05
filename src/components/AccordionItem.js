@@ -33,6 +33,13 @@ const GridBody = styled.div`
     padding-bottom: 0px;
     display: grid;
     grid-template-columns: ${props => props.columns};
+    overflow: hidden;
+    max-height: 0px;
+    transition: max-height 0.5s ease-in-out;
+    
+    &[data-opened=true] {
+        max-height: 800px;
+    }
 `;
 
 const GridHeader = styled.div`
@@ -63,7 +70,7 @@ class AccordionItem extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            closed: true,
+            opened: false,
         };
     };
 
@@ -78,7 +85,7 @@ class AccordionItem extends React.Component {
     };
 
     handleClick() {
-        this.setState({closed: !this.state.closed});
+        this.setState((prev, props) => ({opened: !prev.opened}));
     };
 
     render() {
@@ -95,11 +102,9 @@ class AccordionItem extends React.Component {
                     <ButtonState state={this.props.state}/>
                     <Arrow onClick={() => this.handleClick()} />
                 </GridHeader>
-                {this.state.closed ? "" :
-                    <GridBody columns={this.props.columns}>
-                        {this.insertProps(this.props.children)}
-                    </GridBody>
-                }
+                <GridBody columns={this.props.columns} data-opened={this.state.opened}>
+                    {this.insertProps(this.props.children)}
+                </GridBody>        
             </Frame>
         );
     };

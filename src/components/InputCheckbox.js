@@ -84,7 +84,7 @@ class CheckboxOption extends React.Component {
         this.state = {data: this.props.data};
     };
 
-    handleOnChange(event) {
+    handleOnChange() {
         this.setState((prev, props)=> {return {data: !prev.data}})
     };
 
@@ -94,10 +94,19 @@ class CheckboxOption extends React.Component {
 
     render() {
       return(
-        <OptionWrapper onChange = {(event) => this.handleOnChange(event)}>
+        <OptionWrapper>
             {this.props.right ? this.getLabel() : null} 
-            <Input type="checkbox" value={this.props.value} checked={this.state.data}/>			
-            <Checkbox size={this.props.size} checkColor={this.props.checkColor} boxColor={this.props.boxColor}/>
+            <Input 
+                type = "checkbox" 
+                value = {this.props.value} 
+                checked = {this.state.data} 
+                onChange = {() => this.handleOnChange()}
+            />			
+            <Checkbox 
+                size = {this.props.size} 
+                checkColor = {this.props.checkColor} 
+                boxColor = {this.props.boxColor}
+            />
             {this.props.right ? null : this.getLabel()} 
         </OptionWrapper>
       );  

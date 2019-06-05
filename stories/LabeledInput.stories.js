@@ -2,18 +2,17 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import LabeledInput from '../src/components/LabeledInput';
 
-const customFont = {
-    input: `
-        font-size: 15px;
-        font-weight: bold;
-        color: red;
-    `,
-    label: `
-        font-size: 25px;
-        font-weight: bold;
-        color: blue;
-    `
-}
+const inputFont = `
+    font-size: 15px;
+    font-weight: bold;
+    color: red;
+`;
+const labelFont = `
+    font-size: 25px;
+    font-weight: bold;
+    color: blue;
+`;
+
 
 storiesOf('Input Fields/Labeled Input', module)    
     .add('textbox input - normal label', () => (
@@ -23,8 +22,8 @@ storiesOf('Input Fields/Labeled Input', module)
         <LabeledInput data="some text" type="textbox" placeholder="some placeholder"/>
     ))
     .add('textbox input - custom font', ()=> ([
-        <LabeledInput type="textbox" font={customFont} label="NOMBRE" placeholder="Nombre"/>,
-        <LabeledInput type="textbox" font={customFont} label="APELLIDO" placeholder="Apellido"/>,
+        <LabeledInput type="textbox" labelFont={labelFont} inputFont={inputFont} label="NOMBRE" placeholder="Nombre"/>,
+        <LabeledInput type="textbox" labelFont={labelFont} inputFont={inputFont} label="APELLIDO" placeholder="Apellido"/>,
     ]))
     
     .add('dropdown input - normal label', ()=> (
@@ -34,7 +33,7 @@ storiesOf('Input Fields/Labeled Input', module)
         <LabeledInput type="dropdown" options={["derecha", "izquierda"]}/>
     ))
     .add('dropdown input - custom font', ()=> (
-        <LabeledInput type="dropdown"  label="Mano" font={customFont} placeholder="mano" options={["derecha", "izquierda"]}/>
+        <LabeledInput type="dropdown"  label="Mano" labelFont={labelFont} inputFont={inputFont} placeholder="mano" options={["derecha", "izquierda"]}/>
     ))
 
     .add('textarea input - normal label', ()=> (
@@ -44,7 +43,7 @@ storiesOf('Input Fields/Labeled Input', module)
         <LabeledInput data="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." type="textarea" />
     ))
     .add('textarea input - custom font', ()=> (
-        <LabeledInput type="textarea" placeholder="introduzca su texto aqui" label="Label" font={customFont}/>
+        <LabeledInput type="textarea" placeholder="introduzca su texto aqui" label="Label" labelFont={labelFont} inputFont={inputFont}/>
     ))
 
     .add('checkbox input - no label', ()=> (
@@ -54,6 +53,6 @@ storiesOf('Input Fields/Labeled Input', module)
         <LabeledInput type="radio" label='Seleccion unica'  options={['Opcion 1', 'Opcion 2', 'Opcion 3']} data={[2]}/>
     ))
     .add('checkbox input - custom font', ()=> (
-        <LabeledInput type="checkbox" label='Seleccion multiple'  options={['Opcion 1', 'Opcion 2', 'Opcion 3']} data={[1]} font={customFont}/>
+        <LabeledInput type="checkbox" label='Seleccion multiple'  options={['Opcion 1', 'Opcion 2', 'Opcion 3']} data={[1]} labelFont={labelFont} inputFont={inputFont}/>
     ))
     

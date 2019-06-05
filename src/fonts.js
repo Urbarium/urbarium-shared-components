@@ -1,5 +1,5 @@
 export default {
-
+  
   defaultTitle: `
   font-family: Lato, Roboto, Sans-Serif;
   fonr-size: 27px;

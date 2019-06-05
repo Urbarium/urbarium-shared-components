@@ -13,31 +13,31 @@ const Div = styled.div`
     margin-bottom: 10px;
 `; 
 
-const getInput = (type, data, options, placeholder, fill, right, font) => {
+const getInput = (type, props) => {
     switch (type) {
-        case "textbox": return <InputTextBox data={data} placeholder={placeholder} font={font}/>
-        case "textarea": return <InputTextArea data={data} placeholder={placeholder} fill={fill} font={font}/>
-        case "dropdown": return <InputDropdown data={data} options={options} placeholder={placeholder} font={font}/>
-        case "checkbox": return <InputCheckbox data={data} options={options} right={right} font={font}/>
-        case "radio": return <InputSelection data={data} options={options} right={right} font={font} radio/>
+        case "textbox": return <InputTextBox {...props}/>
+        case "textarea": return <InputTextArea {...props}/>
+        case "dropdown": return <InputDropdown {...props}/>
+        case "checkbox": return <InputCheckbox {...props}/>
+        case "radio": return <InputSelection {...props}/>
         default: return null;
     }
 }
 
-const LabeledInput = ({
-    type = "",
-    data = undefined,
-    options = [], 
-    placeholder = "", 
-    label = "", 
-    font = {input: undefined, label: undefined}, 
-    fill = false, 
-    right = false
-}) => (
-    <Div>        
-        {label ? <Label font={font.label}>{label}</Label> : null}        
-        {getInput(type, data, options, placeholder, fill, right, font.input)}
-    </Div>
-);
+const LabeledInput = props => {
+    const inputProps = Object.assign({}, props);
+    // there's probably a better pattern for this
+    delete inputProps.inputFont;
+    delete inputProps.labelFont;
+    delete inputProps.label
+    delete inputProps.type;
+    return (
+        <Div>        
+            {props.label ? <Label font={props.labelFont}>{props.label}</Label> : null}        
+            {getInput(props.type, props)}
+        </Div>
+    )
+}
+
 
 export default LabeledInput;

@@ -12,7 +12,3 @@ storiesOf('PAGE TESTS', module)
     .add('TEST - Accordion Menu', () => (
         <AccordionMenuPage/>
     ))
-
-    .add('TEST - Input Checkbox New!!!', () => (
-        <InputCheckbox  options={["Pepsi", "Coca", "Fanta"]} data={[2]}/>
-    ))
