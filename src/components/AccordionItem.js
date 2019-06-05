@@ -49,22 +49,14 @@ const GridHeader = styled.div`
     justify-content: space-between;
 `
 
-const inputFont = {
-    input: `
-        ${fonts.defaultAccordionInput}
-        color: ${colors.option};
-    `,
-    label: `
-        ${fonts.defaultAccordionLabel}
-        color: ${colors.black};
-    `
-};
-
+const childrenFont = {
+    inputFont : `${fonts.defaultAccordionInput} color: ${colors.option};`,
+    labelFont : `${fonts.defaultAccordionLabel} color: ${colors.black};`
+}
 const labelFont = `
     ${fonts.accLabel}
     color: ${colors.passive}
 `;
-
 
 class AccordionItem extends React.Component {
     constructor(props){
@@ -77,9 +69,9 @@ class AccordionItem extends React.Component {
     insertProps(children) {
         if (children) {
             if (isArray(children)) {
-                return children.map((child) => React.cloneElement(child, {font: inputFont}))
+                return children.map((child) => React.cloneElement(child, {...childrenFont}))
             } else {
-                return React.cloneElement(children, {font: inputFont})
+                return React.cloneElement(children, {...childrenFont})
             };
         };
     };

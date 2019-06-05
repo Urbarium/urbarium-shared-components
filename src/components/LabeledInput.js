@@ -25,7 +25,7 @@ const getInput = (type, props) => {
 }
 
 const LabeledInput = props => {
-    const inputProps = Object.assign({}, props);
+    const inputProps = Object.assign({}, props, {font: props.inputFont});
     // there's probably a better pattern for this
     delete inputProps.inputFont;
     delete inputProps.labelFont;
@@ -34,7 +34,7 @@ const LabeledInput = props => {
     return (
         <Div>        
             {props.label ? <Label font={props.labelFont}>{props.label}</Label> : null}        
-            {getInput(props.type, props)}
+            {getInput(props.type, inputProps)}
         </Div>
     )
 }

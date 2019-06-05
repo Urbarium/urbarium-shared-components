@@ -60,7 +60,7 @@ class ButtonState extends React.Component {
     }
     render() {
         return (
-                <div class="button-state-container">
+                <div className="button-state-container">
                     <Button  onClick={() => this.cycleState()} 
                         color={states[this.state.index].color} 
                         backColor={states[this.state.index].backColor}>                                    
